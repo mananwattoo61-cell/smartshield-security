@@ -43,6 +43,12 @@ img{max-width:100%;height:auto;display:block}
 .btn-light:hover{background:var(--light)}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .btn-row .btn{flex:0 1 auto}
+/* Pair rows (hero, package cards, final CTA): one row, equal heights, desktop */
+.hero .btn-row{flex-wrap:nowrap}
+.hero .btn{padding:13px 20px;font-size:.95rem}
+.pkg-body .btn-row{flex-wrap:nowrap}
+.pkg-body .btn{padding:12px 14px;font-size:.92rem;flex:1 1 0;min-width:0}
+body{overflow-x:hidden}
 
 /* ---------- Top strip + header (white, single row) ---------- */
 .topbar{background:var(--navy);color:#C7D3E0;font-size:.86rem}
@@ -188,6 +194,8 @@ img{max-width:100%;height:auto;display:block}
 @media(max-width:1100px){
   .main-nav a{padding:8px 8px;font-size:.9rem}
   .header-cta .btn{padding:10px 14px}
+  .hero-grid{grid-template-columns:1fr}
+  .hero .btn{padding:13px 22px;font-size:1rem}
 }
 @media(max-width:900px){
   .grid-4{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:1fr 1fr}
@@ -210,6 +218,15 @@ img{max-width:100%;height:auto;display:block}
   .trust-strip-inner{grid-template-columns:1fr}
   .section{padding:52px 0}
   .btn{white-space:normal}
+  /* Mobile: button rows stack, buttons full-width (desktop rows stay row) */
+  .btn-row{flex-direction:column}
+  .btn-row .btn{width:100%;flex:1 1 auto}
+  .hero .btn-row{flex-wrap:wrap}
+  .hero .btn{padding:13px 26px;font-size:1rem}
+  .pkg-body .btn-row .btn{flex:1 1 auto}
   .pkg-price{white-space:normal}
   .header-cta .btn-primary{display:none}
+  /* Steps: number circle on top on narrow screens */
+  .step{padding:76px 20px 20px}
+  .step:before{left:20px;top:20px}
 }

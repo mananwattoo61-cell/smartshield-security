@@ -53,35 +53,35 @@ def pkg_card(name, res, price, features, prefix="", upgrades=None):
 
 # Exact packages, as published (prices + features). Descriptions rewritten; numbers kept.
 HOME_PKGS = [
- ("4 CCTV Camera Package Full HD", "2 Megapixel — 4 cameras", "40,500",
-  ["1 XVR 4-port megapixel recorder", "500GB hard disk drive", "200 feet wire", "Complete installation", "Live mobile view", "1-year warranty", "Lifetime services"], None),
- ("4 CCTV Camera Package 4k", "5 Megapixel — 4 cameras", "57,400",
-  ["1 XVR 4-port 5MP recorder", "500GB hard disk drive", "300FT wire", "Complete installation", "Live mobile view", "1-year warranty", "Lifetime service"], None),
- ("4 CCTV Camera Package full 4K", "8 Megapixel — 4 cameras", "98,400",
+ ("4 CCTV Camera Package — Full HD (2MP)", "2 Megapixel — 4 cameras", "40,500",
+  ["1 XVR 4-port megapixel recorder", "500GB hard disk drive", "200 feet wire", "Complete installation", "Live mobile view", "1-year warranty", "Lifetime service"], None),
+ ("4 CCTV Camera Package — 4K (5MP)", "5 Megapixel — 4 cameras", "57,400",
+  ["1 XVR 4-port 5MP recorder", "500GB hard disk drive", "300 feet wire", "Complete installation", "Live mobile view", "1-year warranty", "Lifetime service"], None),
+ ("4 CCTV Camera Package — Full 4K (8MP)", "8 Megapixel — 4 cameras", "98,400",
   ["1 XVR 8-port 8MP recorder", "500GB hard disk drive", "300 feet wire", "Complete installation", "Live mobile view", "1-year warranty", "Lifetime service"], None),
 ]
 MP5_PKGS = [
- ("Affordable 2 CCTV Cameras Package (4K)", "5MP — 2 cameras", "48,500",
+ ("Affordable 2 CCTV Cameras Package — 4K (5MP)", "5MP — 2 cameras", "48,500",
   ["2 × 5MP CCTV cameras", "Day and night vision", "4-channel DVR supporting up to 5MP", "500GB hard drive", "12V DC 5A power supply", "Approximately 150 feet of copper cable", "Weatherproof (IP67)", "BNC connectors", "Live mobile viewing", "Professional installation", "1-year warranty"],
   "Colour Night Vision Rs 55,000 · With Audio Rs 62,900"),
- ("Best 4 CCTV Cameras Package (4K)", "5MP — 4 cameras", "62,400",
+ ("Best 4 CCTV Cameras Package — 4K (5MP)", "5MP — 4 cameras", "62,400",
   ["4 × 5MP CCTV cameras", "Day and night vision", "4-channel DVR supporting up to 5MP", "500GB hard drive", "12V DC 5A power supply", "Approximately 200 feet of copper cable", "BNC connectors", "IP67 weather-resistant cameras", "Live mobile viewing", "Professional installation", "1-year warranty"],
   "Colour Night Vision Rs 73,000 · With Audio Rs 78,500"),
- ("Professional 6 CCTV Cameras Package (4K)", "5MP — 6 cameras", "81,500",
+ ("Professional 6 CCTV Cameras Package — 4K (5MP)", "5MP — 6 cameras", "81,500",
   ["6 × 5MP CCTV cameras", "Day and night vision", "8-channel DVR supporting up to 5MP", "500GB hard drive", "12V DC 5A power supply", "Approximately 300 feet of copper cable", "BNC connectors", "IP67 weather-resistant cameras", "Live mobile viewing", "Professional installation", "1-year warranty"],
   "Colour Night Vision Rs 109,000 · With Audio Rs 124,900"),
- ("Reliable 8 CCTV Cameras Package (4K)", "5MP — 8 cameras", "59,400",
+ ("Reliable 8 CCTV Cameras Package — 4K (5MP)", "5MP — 8 cameras", "59,400",
   ["8 × 5MP CCTV cameras", "Day and night vision", "8-channel DVR supporting up to 5MP", "1TB hard drive", "12V DC 5A power supply", "Approximately 500 feet of copper cable", "BNC connectors", "IP66 weather-resistant cameras", "Live mobile viewing", "Professional installation", "1-year warranty"],
   "Colour Night Vision Rs 110,500 · With Audio Rs 138,000"),
 ]
 K4_PKGS = [
- ("2 CCTV Cameras Package (Full 4K)", "8MP — 2 cameras", "75,400",
+ ("2 CCTV Cameras Package — Full 4K (8MP)", "8MP — 2 cameras", "75,400",
   ["2 × 4K CCTV cameras (8.0MP)", "Day & night vision", "4-channel DVR up to 12.0MP", "500GB hard disk drive", "12V DC 5A power supply", "150 feet copper cable", "BNC connectors", "Waterproof camera (IP67)", "Live mobile view", "Free installation", "1-year warranty"], None),
- ("4 CCTV Cameras Package (Full 4K)", "8MP — 4 cameras", "95,000",
+ ("4 CCTV Cameras Package — Full 4K (8MP)", "8MP — 4 cameras", "95,000",
   ["4 × 4K CCTV cameras (8.0MP)", "Day & night vision", "4-channel DVR up to 12.0MP", "500GB hard disk drive", "12V DC 5A power supply", "150 feet copper cable", "Waterproof (IP67)", "BNC connectors", "Live mobile view", "Free installation", "1-year warranty"], None),
- ("6 CCTV Cameras Package (Full 4K)", "8MP — 6 cameras", "134,500",
+ ("6 CCTV Cameras Package — Full 4K (8MP)", "8MP — 6 cameras", "134,500",
   ["6 × 4K CCTV cameras (8.0MP)", "Day & night vision", "8-channel DVR up to 12.0MP", "500GB hard disk drive", "12V DC 5A power supply", "300 feet copper wire", "BNC connectors", "Waterproof camera (IP67)", "Live mobile view", "Free installation", "1-year warranty"], None),
- ("8 CCTV Cameras Package (Full 4K)", "8MP — 8 cameras", "155,500",
+ ("8 CCTV Cameras Package — Full 4K (8MP)", "8MP — 8 cameras", "155,500",
   ["8 × full 4K CCTV cameras (8.0MP)", "Day & night vision", "8-channel DVR up to 12.0MP", "500GB hard disk drive", "12V DC 5A power supply", "500 feet copper wire & BNC connectors", "Waterproof (IP67)", "2TB hard disk drive", "Live mobile view", "Free installation", "1-year warranty"], None),
 ]
 
@@ -138,9 +138,14 @@ def new_home():
       ("cctv-maintenance", "CCTV Maintenance", "Regular checks, cleaning and storage review to keep your system reliable.", "ptz-camera.svg", "PTZ camera maintenance"),
       ("remote-monitoring", "Remote Mobile Monitoring", "Live viewing, playback and alerts on your phone, wherever you are.", "control-room.svg", "Remote CCTV monitoring"),
       ("ai-camera-solutions", "AI Camera Solutions", "Human and vehicle detection where your camera and recorder support it.", "hero-camera.svg", "AI-enabled security camera"),
+      ("fire-alarm-systems", "Fire Alarm Systems", "Smoke and heat detectors, alarm panels and sirens for early fire warning.", "fire-alarm.svg", "Fire alarm system"),
+      ("alarm-systems", "Alarm Systems", "Burglar alarms, door and window sensors and motion detectors for your property.", "alarm-system.svg", "Burglar alarm system"),
     ]
+    # Fire alarm / alarm pages live at top level, not under services/
+    SVC_LINK_OVERRIDE = {"fire-alarm-systems": "fire-alarm-systems/index.html", "alarm-systems": "alarm-systems/index.html"}
     for slug, t, d, img, alt in svc_meta:
-        svc_cards += f'<article class="card service-card"><img src="assets/images/{img}" alt="{alt}" width="800" height="600" loading="lazy"><h3>{t}</h3><p>{d}</p><a class="btn btn-outline" href="services/{slug}/index.html">Learn more</a></article>'
+        link = SVC_LINK_OVERRIDE.get(slug, f"services/{slug}/index.html")
+        svc_cards += f'<article class="card service-card"><img src="assets/images/{img}" alt="{alt}" width="800" height="600" loading="lazy"><h3>{t}</h3><p>{d}</p><a class="btn btn-outline" href="{link}">Learn more</a></article>'
     def _icon(inner):
         return f'<div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">{inner}</svg></div>'
     def _check():
@@ -169,7 +174,7 @@ def new_home():
 
 <section class="trust-strip"><div class="container trust-strip-inner">
 <div class="trust-item">{_check()} Professional installation</div>
-<div class="trust-item">{_check()} Genuine Hikvision, Dahua, IMOU &amp; CP Plus</div>
+<div class="trust-item">{_check()} Genuine Branded Cameras</div>
 <div class="trust-item">{_check()} Mobile viewing setup</div>
 <div class="trust-item">{_check()} 1-year warranty on packages</div>
 </div></section>
@@ -182,7 +187,7 @@ def new_home():
 </div></div></section>
 
 <section class="section light"><div class="container"><p class="eyebrow">Our Security Services</p><h2>CCTV &amp; Security Services in Lahore</h2>
-<p class="lead">Ten services, one team — from a first camera at home to a full commercial system. We also cover maintenance and repair, alarm systems, fire alarm systems and biometric attendance machines.</p>
+<p class="lead">Twelve services, one team — from a first camera at home to a full commercial system. We also cover maintenance and repair, alarm systems, fire alarm systems and biometric attendance machines.</p>
 <div class="grid grid-3 center-orphan" style="margin-top:28px">{svc_cards}</div>
 <ul class="link-list"><li><a href="services/index.html">View all services &rsaquo;</a></li><li><a href="products/index.html">Browse CCTV products &rsaquo;</a></li><li><a href="cctv-camera-installation-in-lahore/index.html">CCTV installation in Lahore — full guide &rsaquo;</a></li></ul></div></section>
 
@@ -198,18 +203,18 @@ def new_home():
 <div class="card">{_icon('<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>')}<h3>Clean, Professional Installation</h3><p>Neat cabling, secure mounting and tested connections, with minimal disruption to your home or business.</p></div>
 <div class="card">{_icon('<line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/>')}<h3>Proper DVR/NVR Configuration</h3><p>Recording, retention and playback set up correctly from day one — so footage is there when you need it.</p></div>
 <div class="card">{_icon('<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>')}<h3>Mobile Monitoring Setup</h3><p>Live viewing and playback on your phone, configured before handover, with a walkthrough of how to use it.</p></div>
-<div class="card">{_icon('<circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>')}<h3>Maintenance &amp; Technical Assistance</h3><p>Repairs, scheduled checks and help when something stops working — including systems installed by others.</p></div>
+<div class="card">{_icon('<circle cx="12" cy="12" r="9"/><path d="M8.5 12.5l2.5 2.5 4.5-5"/>')}<h3>Maintenance &amp; Support</h3><p>Repairs, scheduled checks and help when something stops working — including systems installed by others.</p></div>
 </div></div></section>
 
 <section class="section light"><div class="container"><p class="eyebrow">Common Problems We Fix</p><h2>Why CCTV Systems Fail — and How We Avoid It</h2>
 <p class="lead">Most CCTV problems are not caused by the camera itself, but by poor installation, wrong equipment or missing configuration. These are the faults we see most often in Lahore:</p>
 <div class="grid grid-3" style="margin-top:24px">
-<div class="card">{_icon('<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>')}<h3>Poor Video Quality</h3><p>Blurry or unclear footage usually comes from the wrong camera for the distance or lighting, dirty lenses, or low-quality cabling. We match resolution and lens to the area being covered.</p></div>
-<div class="card">{_icon('<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>')}<h3>Unstable Connections</h3><p>Cameras that keep disconnecting are often caused by weak Wi-Fi, overloaded networks or poor power supply. We check the network and power before recommending wireless cameras.</p></div>
-<div class="card">{_icon('<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>')}<h3>Bad Camera Angles</h3><p>A camera pointed at the wrong place records everything except the incident. Placement is planned around entrances, blind spots and the areas that actually matter.</p></div>
-<div class="card">{_icon('<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>')}<h3>Power Outages &amp; Load Shedding</h3><p>When power drops, recording stops unless backup is planned. We discuss UPS and backup options so your system keeps recording during outages where possible.</p></div>
-<div class="card">{_icon('<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>')}<h3>Mobile App Not Connecting</h3><p>Remote viewing fails when recorder settings, network ports or app configuration are wrong. We configure and test mobile viewing on your own phone before handover.</p></div>
-<div class="card">{_icon('<path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>')}<h3>Recording Failures</h3><p>Systems that do not record are usually let down by a full or faulty hard disk, wrong retention settings or a recorder fault. We size storage to your retention period and test recording before sign-off.</p></div>
+<div class="card">{_icon('<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>')}<h3>Poor Video Quality</h3><p>Blurry or unclear footage usually comes from the wrong camera for the distance or lighting, dirty lenses, or low-quality cabling. We match resolution and lens to the area being covered.</p></div>
+<div class="card">{_icon('<path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/>')}<h3>Unstable Connections</h3><p>Cameras that keep disconnecting are often caused by weak Wi-Fi, overloaded networks or poor power supply. We check the network and power before recommending wireless cameras.</p></div>
+<div class="card">{_icon('<circle cx="12" cy="12" r="10"/><line x1="22" y1="12" x2="18" y2="12"/><line x1="6" y1="12" x2="2" y2="12"/><line x1="12" y1="6" x2="12" y2="2"/><line x1="12" y1="22" x2="12" y2="18"/>')}<h3>Bad Camera Angles</h3><p>A camera pointed at the wrong place records everything except the incident. Placement is planned around entrances, blind spots and the areas that actually matter.</p></div>
+<div class="card">{_icon('<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>')}<h3>Power Outages &amp; Load Shedding</h3><p>When power drops, recording stops unless backup is planned. We discuss UPS and backup options so your system keeps recording during outages where possible.</p></div>
+<div class="card">{_icon('<rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>')}<h3>Mobile App Not Connecting</h3><p>Remote viewing fails when recorder settings, network ports or app configuration are wrong. We configure and test mobile viewing on your own phone before handover.</p></div>
+<div class="card">{_icon('<line x1="22" y1="12" x2="2" y2="12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/><line x1="6" y1="16" x2="6.01" y2="16"/><line x1="10" y1="16" x2="10.01" y2="16"/>')}<h3>Recording Failures</h3><p>Systems that do not record are usually let down by a full or faulty hard disk, wrong retention settings or a recorder fault. We size storage to your retention period and test recording before sign-off.</p></div>
 </div></div></section>
 
 <section class="section"><div class="container"><p class="eyebrow">Installation Process</p><h2>How to Set Up a CCTV Camera — Step by Step</h2>
@@ -232,9 +237,9 @@ def new_home():
 <section class="section light"><div class="container"><p class="eyebrow">Pricing in Lahore</p><h2>What Does CCTV Installation Cost in Lahore?</h2>
 <p class="lead">Prices vary with camera count, camera type, recorder, storage and cabling — so there is no single fixed price. As a guide, typical Lahore market ranges are:</p>
 <div class="grid grid-3" style="margin-top:24px">
-<div class="card"><h3>Installation from <span class="nowrap">PKR 12,500</span></h3><p>Professional installation for basic setups typically starts from PKR 12,500 in Lahore.</p></div>
-<div class="card"><h3>Typical Installation Range</h3><p><span class="nowrap"><strong>PKR 12,500 – 50,000+</strong></span></p><p>Most home and small-shop installations fall in this range, depending on camera count, DVR/NVR system and mobile connectivity setup.</p></div>
-<div class="card"><h3>4MP Camera</h3><p><span class="nowrap"><strong>PKR 6,000 – 12,000</strong></span></p><p>A 4MP CCTV camera in Pakistan typically costs between PKR 6,000 and PKR 12,000 depending on brand and features. Installation charges are separate.</p></div>
+<div class="card"><h3>Installation from <span class="nowrap">PKR 12,500</span></h3><p>Professional installation for basic setups typically starts from PKR 12,500 in Lahore.</p><div class="btn-row"><a class="btn btn-outline" href="calculator/index.html">Get an Estimate</a></div></div>
+<div class="card"><h3>Typical Installation Range</h3><p><span class="nowrap"><strong>PKR 12,500 – 50,000+</strong></span></p><p>Most home and small-shop installations fall in this range, depending on camera count, DVR/NVR system and mobile connectivity setup.</p><div class="btn-row"><a class="btn btn-outline" href="calculator/index.html">Get an Estimate</a></div></div>
+<div class="card"><h3>4MP Camera</h3><p><span class="nowrap"><strong>PKR 6,000 – 12,000</strong></span></p><p>A 4MP CCTV camera in Pakistan typically costs between PKR 6,000 and PKR 12,000 depending on brand and features. Installation charges are separate.</p><div class="btn-row"><a class="btn btn-outline" href="calculator/index.html">Get an Estimate</a></div></div>
 </div>
 <p style="margin-top:16px">These are typical market ranges for guidance, not SmartShield fixed prices. Your final quotation is confirmed after a site assessment.</p>
 <ul class="link-list"><li><a href="blog/cost-of-cctv-camera-installation-in-lahore/index.html">Cost of CCTV camera installation in Lahore</a></li><li><a href="2mp-cctv-camera-price-in-lahore/index.html">2MP camera prices</a></li><li><a href="ip-camera-prices-in-lahore/index.html">IP camera prices</a></li><li><a href="wireless-cctv-camera-price-in-lahore/index.html">Wireless camera prices</a></li></ul></div></section>
@@ -273,11 +278,22 @@ def new_home():
 <div class="card"><h3>Model Town</h3><p>Home and office CCTV installation.</p><p><a href="cctv-camera-installation-in-lahore/index.html">CCTV in Model Town &rsaquo;</a></p></div>
 <div class="card"><h3>Wapda Town</h3><p>Residential and commercial security.</p><p><a href="cctv-camera-installation-in-lahore/index.html">CCTV in Wapda Town &rsaquo;</a></p></div>
 <div class="card"><h3>Bahria Town Lahore</h3><p>Home, villa and commercial CCTV systems.</p><p><a href="cctv-camera-installation-in-lahore/index.html">CCTV in Bahria Town Lahore &rsaquo;</a></p></div>
+<div class="card"><h3>Lahore Cantonment (Cantt)</h3><p>Home and office CCTV installation.</p><p><a href="cctv-camera-installation-in-lahore/index.html">CCTV in Lahore Cantt &rsaquo;</a></p></div>
+<div class="card"><h3>Township, Lahore</h3><p>Residential and commercial security.</p><p><a href="cctv-camera-installation-in-lahore/index.html">CCTV in Township, Lahore &rsaquo;</a></p></div>
 </div><p style="margin-top:16px">Service availability in other Lahore areas can be confirmed by phone or WhatsApp.</p></div></section>
 
 <section class="section"><div class="container"><p class="eyebrow">Contact SmartShield</p><h2>Talk to SmartShield Security Today</h2>
-<p class="lead">Call <a href="tel:+923059502580">03059502580</a> or message us on <a href="{WA}" target="_blank" rel="noopener">WhatsApp (+92 305 9502580)</a> — WhatsApp anytime. Tell us about your property and we will help you choose the right CCTV setup for it.</p>
-<div class="btn-row"><a class="btn btn-primary" href="tel:+923059502580">Call 03059502580</a><a class="btn wa-btn" href="{WA}" target="_blank" rel="noopener">WhatsApp Us</a></div></div></section>
+<div class="grid grid-2" style="margin-top:24px;align-items:start">
+<div>
+<p class="lead">Tell us about your property and we will help you choose the right CCTV setup for it.</p>
+<div class="btn-row"><a class="btn btn-primary" href="tel:+923059502580">Call 03059502580</a><a class="btn wa-btn" href="{WA}" target="_blank" rel="noopener">WhatsApp Us</a></div>
+</div>
+<div class="card">
+<h3>Contact Information</h3>
+<p>Phone: <a href="tel:+923059502580">03059502580</a><br>WhatsApp: <a href="{WA}" target="_blank" rel="noopener">+92 305 9502580</a><br>Serving all of Lahore, Pakistan — WhatsApp anytime.</p>
+<p><a href="calculator/index.html">Build your CCTV package in the Smart Calculator &rsaquo;</a></p>
+</div>
+</div></div></section>
 """
     faqs = [
       ("What is the cost of installing a CCTV camera?", "The cost depends on the camera type (wired or wireless), its resolution and how complex the installation is. In Lahore, professional installation for basic setups typically starts from PKR 12,500. The final price is confirmed after a site assessment, because cable length, camera positions and recorder requirements differ for every property."),

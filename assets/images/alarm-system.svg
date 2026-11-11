@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img">
+<rect width="800" height="600" fill="#071426"/>
+<circle cx="640" cy="120" r="180" fill="#168BFF" opacity="0.12"/>
+<circle cx="120" cy="480" r="140" fill="#22D3EE" opacity="0.10"/>
+
+<g><rect x="270" y="120" width="260" height="300" rx="18" fill="#0D1F35" stroke="#168BFF" stroke-width="4"/>
+<rect x="300" y="150" width="200" height="56" rx="10" fill="#168BFF" opacity="0.35"/>
+<circle cx="400" cy="178" r="14" fill="#22D3EE"/>
+<g fill="#FFFFFF"><rect x="306" y="232" width="52" height="52" rx="8" opacity="0.9"/><rect x="374" y="232" width="52" height="52" rx="8" opacity="0.9"/><rect x="442" y="232" width="52" height="52" rx="8" opacity="0.9"/><rect x="306" y="300" width="52" height="52" rx="8" opacity="0.9"/><rect x="374" y="300" width="52" height="52" rx="8" opacity="0.9"/><rect x="442" y="300" width="52" height="52" rx="8" opacity="0.9"/></g>
+<g fill="#050D19" font-family="Arial,sans-serif" font-size="26" font-weight="bold" text-anchor="middle"><text x="332" y="267">1</text><text x="400" y="267">2</text><text x="468" y="267">3</text><text x="332" y="335">4</text><text x="400" y="335">5</text><text x="468" y="335">6</text></g>
+<rect x="306" y="368" width="188" height="28" rx="14" fill="#22D3EE"/>
+<path d="M600 300a90 90 0 0 1 0 60M630 270a140 140 0 0 1 0 120" fill="none" stroke="#168BFF" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+<circle cx="600" cy="330" r="10" fill="#22D3EE"/>
+<text x="400" y="500" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="26" font-weight="bold" text-anchor="middle">Alarm Systems</text></g>
+</svg>
