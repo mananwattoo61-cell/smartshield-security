@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mananwattoo61-cell.github.io/smartshield-security/sitemap.xml
