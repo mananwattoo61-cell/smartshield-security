@@ -24,7 +24,7 @@ def head(title, desc, canon, prefix, extra=""):
 NAV = [
  ("Home", "index.html"), ("About Us", "about/index.html"), ("Services", "services/cctv-installation/index.html"),
  ("Camera Solutions", "services/ip-camera-installation/index.html"), ("Smart Calculator", "calculator/index.html"),
- ("Projects", "projects/index.html"), ("Contact Us", "contact/index.html"),
+ ("Blog", "blog/index.html"), ("Projects", "projects/index.html"), ("Contact Us", "contact/index.html"),
 ]
 def header(prefix, active=""):
     links = "".join(f'<a href="{prefix}{u}" class="{"active" if a==active else ""}">{a}</a>' for a, u in NAV)
@@ -40,7 +40,7 @@ def footer(prefix):
     return f"""<footer class="site-footer"><div class="container"><div class="footer-grid">
 <div><a class="logo" href="{prefix}index.html"><img src="{prefix}assets/images/logo.svg" alt="SmartShield Security logo" width="40" height="40"><span>SmartShield<small>Security</small></span></a>
 <p style="margin-top:14px">SmartShield Security provides CCTV camera installation and complete security solutions in Lahore, Pakistan — modern cameras, professional installation, and reliable technical support.</p></div>
-<div><h4>Quick Links</h4><p><a href="{prefix}index.html">Home</a><br><a href="{prefix}about/index.html">About Us</a><br><a href="{prefix}calculator/index.html">Smart Calculator</a><br><a href="{prefix}projects/index.html">Projects</a><br><a href="{prefix}social-media/index.html">Social Media</a><br><a href="{prefix}contact/index.html">Contact Us</a></p></div>
+<div><h4>Quick Links</h4><p><a href="{prefix}index.html">Home</a><br><a href="{prefix}about/index.html">About Us</a><br><a href="{prefix}calculator/index.html">Smart Calculator</a><br><a href="{prefix}blog/index.html">Blog</a><br><a href="{prefix}projects/index.html">Projects</a><br><a href="{prefix}social-media/index.html">Social Media</a><br><a href="{prefix}contact/index.html">Contact Us</a></p></div>
 <div><h4>Services</h4><p><a href="{prefix}services/cctv-installation/index.html">CCTV Installation</a><br><a href="{prefix}services/home-security/index.html">Home CCTV Security</a><br><a href="{prefix}services/office-security/index.html">Office Security</a><br><a href="{prefix}services/ip-camera-installation/index.html">IP Cameras</a><br><a href="{prefix}services/dvr-nvr-installation/index.html">DVR &amp; NVR</a><br><a href="{prefix}services/cctv-repair/index.html">CCTV Repair</a></p></div>
 <div><h4>Contact</h4><p>Phone: <a href="tel:+923059502580">{PHONE}</a><br>WhatsApp: <a href="{WA}" target="_blank" rel="noopener">+92 305 9502580</a><br>Service area: Lahore, Pakistan<br><a href="{prefix}privacy-policy/index.html">Privacy Policy</a><br><a href="{prefix}terms/index.html">Terms &amp; Conditions</a></p></div>
 </div><div class="footer-bottom">&copy; <span id="year">2026</span> SmartShield Security. All rights reserved. CCTV camera installation &amp; security solutions in Lahore, Pakistan.</div></div></footer>
