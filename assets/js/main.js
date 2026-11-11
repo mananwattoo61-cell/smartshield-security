@@ -41,5 +41,14 @@
       window.open("https://wa.me/923059502580?text=" + encodeURIComponent(text), "_blank");
     });
   }
+  /* Sticky WhatsApp pill: hide it while the footer / final CTA is on screen
+     so it never overlaps content */
+  var sticky = document.getElementById("sticky-cta");
+  var footerEl = document.querySelector(".site-footer");
+  if (sticky && footerEl && "IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      sticky.classList.toggle("hidden", entries[0].isIntersecting);
+    }, { rootMargin: "0px 0px -40px 0px" }).observe(footerEl);
+  }
   document.getElementById("year") && (document.getElementById("year").textContent = new Date().getFullYear());
 })();

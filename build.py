@@ -22,13 +22,13 @@ def head(title, desc, canon, prefix, extra=""):
 """
 
 NAV = [
- ("Home", "index.html"), ("About Us", "about/index.html"), ("Services", "services/cctv-installation/index.html"),
- ("Camera Solutions", "services/ip-camera-installation/index.html"), ("Smart Calculator", "calculator/index.html"),
- ("Blog", "blog/index.html"), ("Projects", "projects/index.html"), ("Contact Us", "contact/index.html"),
+ ("Home", "index.html"), ("About Us", "about/index.html"), ("Services", "services/index.html"),
+ ("Packages", "packages/index.html"), ("Products", "products/index.html"), ("Contact Us", "contact/index.html"),
 ]
 def header(prefix, active=""):
     links = "".join(f'<a href="{prefix}{u}" class="{"active" if a==active else ""}">{a}</a>' for a, u in NAV)
-    return f"""<header class="site-header"><div class="container header-inner">
+    return f"""<div class="topbar"><div class="container topbar-inner"><span>SmartShield Security &mdash; CCTV Installation in Lahore, Pakistan</span><span class="topbar-right"><a href="tel:+923059502580">Call {PHONE}</a><a href="{WA}" target="_blank" rel="noopener">WhatsApp +92 305 9502580</a><span>WhatsApp Anytime</span></span></div></div>
+<header class="site-header"><div class="container header-inner">
 <a class="logo" href="{prefix}index.html"><img src="{prefix}assets/images/logo.svg" alt="SmartShield Security logo" width="40" height="40"><span>SmartShield<small>Security</small></span></a>
 <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
 <nav class="main-nav" aria-label="Main navigation">{links}</nav>
@@ -40,11 +40,11 @@ def footer(prefix):
     return f"""<footer class="site-footer"><div class="container"><div class="footer-grid">
 <div><a class="logo" href="{prefix}index.html"><img src="{prefix}assets/images/logo.svg" alt="SmartShield Security logo" width="40" height="40"><span>SmartShield<small>Security</small></span></a>
 <p style="margin-top:14px">SmartShield Security provides CCTV camera installation and complete security solutions in Lahore, Pakistan — modern cameras, professional installation, and reliable technical support.</p></div>
-<div><h4>Quick Links</h4><p><a href="{prefix}index.html">Home</a><br><a href="{prefix}about/index.html">About Us</a><br><a href="{prefix}calculator/index.html">Smart Calculator</a><br><a href="{prefix}blog/index.html">Blog</a><br><a href="{prefix}projects/index.html">Projects</a><br><a href="{prefix}social-media/index.html">Social Media</a><br><a href="{prefix}contact/index.html">Contact Us</a></p></div>
+<div><h4>Quick Links</h4><p><a href="{prefix}index.html">Home</a><br><a href="{prefix}about/index.html">About Us</a><br><a href="{prefix}packages/index.html">CCTV Packages</a><br><a href="{prefix}products/index.html">CCTV Products</a><br><a href="{prefix}calculator/index.html">Smart Calculator</a><br><a href="{prefix}blog/index.html">Blog</a><br><a href="{prefix}projects/index.html">Projects</a><br><a href="{prefix}social-media/index.html">Social Media</a><br><a href="{prefix}contact/index.html">Contact Us</a></p></div>
 <div><h4>Services</h4><p><a href="{prefix}services/cctv-installation/index.html">CCTV Installation</a><br><a href="{prefix}services/home-security/index.html">Home CCTV Security</a><br><a href="{prefix}services/office-security/index.html">Office Security</a><br><a href="{prefix}services/ip-camera-installation/index.html">IP Cameras</a><br><a href="{prefix}services/dvr-nvr-installation/index.html">DVR &amp; NVR</a><br><a href="{prefix}services/cctv-repair/index.html">CCTV Repair</a></p></div>
 <div><h4>Contact</h4><p>Phone: <a href="tel:+923059502580">{PHONE}</a><br>WhatsApp: <a href="{WA}" target="_blank" rel="noopener">+92 305 9502580</a><br>Service area: Lahore, Pakistan<br><a href="{prefix}privacy-policy/index.html">Privacy Policy</a><br><a href="{prefix}terms/index.html">Terms &amp; Conditions</a></p></div>
 </div><div class="footer-bottom">&copy; <span id="year">2026</span> SmartShield Security. All rights reserved. CCTV camera installation &amp; security solutions in Lahore, Pakistan.</div></div></footer>
-<div class="sticky-cta"><a class="sticky-wa" href="{WA}" target="_blank" rel="noopener">WhatsApp Us</a><a class="sticky-call" href="tel:+923059502580">Call {PHONE}</a></div>
+<div class="sticky-cta" id="sticky-cta"><a href="{WA}" target="_blank" rel="noopener">WhatsApp Us</a></div>
 <script src="{prefix}assets/js/pricing-config.js"></script><script src="{prefix}assets/js/main.js"></script>
 </body></html>
 """
@@ -57,12 +57,12 @@ def write(path, content):
 
 def faq_block(faqs):
     items = "".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in faqs)
-    return f'<section class="section"><div class="container faq"><p class="eyebrow">FAQs</p><h2>Frequently Asked Questions</h2>{items}</div></section>'
+    return f'<section class="section"><div class="container faq"><p class="eyebrow">FAQs</p><h2>Frequently Asked Questions</h2><div class="faq-grid">{items}</div></div></section>'
 
 def cta_block(prefix):
     return f"""<section class="section dark"><div class="container" style="text-align:center"><h2>READY TO SECURE YOUR PROPERTY?</h2>
 <p style="max-width:640px;margin:10px auto">Talk to SmartShield Security about a CCTV setup for your home, office, or shop in Lahore.</p>
-<div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="{prefix}contact/index.html">Contact SmartShield</a><a class="btn btn-cyan" href="{prefix}calculator/index.html">Build Your CCTV Package</a><a class="btn btn-light" href="{WA}" target="_blank" rel="noopener">WhatsApp Us</a></div></div></section>"""
+<div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="{prefix}contact/index.html">Contact SmartShield</a><a class="btn wa-btn" href="{WA}" target="_blank" rel="noopener">WhatsApp Us</a></div></div></section>"""
 
 SERVICES = [
  ("cctv-installation", "CCTV Camera Installation in Lahore | SmartShield Security",
@@ -152,7 +152,7 @@ def home():
 <h1>ADVANCED SECURITY. <span>SMARTER PROTECTION.</span></h1>
 <p class="sub">Professional CCTV Camera Installation &amp; Security Solutions in Lahore</p>
 <p>Protect your home, office, shop, and commercial property with modern surveillance systems, professional CCTV installation, smart monitoring, and reliable technical support.</p>
-<div class="btn-row"><a class="btn btn-primary" href="contact/index.html">Get Free Security Consultation</a><a class="btn btn-cyan" href="calculator/index.html">Calculate Your CCTV Budget</a></div>
+<div class="btn-row"><a class="btn btn-primary" href="contact/index.html">Get Free Security Consultation</a><a class="btn btn-ghost-light" href="calculator/index.html">Calculate Your CCTV Budget</a></div>
 <div class="hero-badges"><span>Lahore, Pakistan</span><span>Professional Installation</span><span>Mobile Monitoring Setup</span></div>
 </div><div class="hero-visual"><img src="assets/images/hero-camera.svg" alt="Premium AI-enabled surveillance camera overlooking a modern commercial building" width="800" height="600"><p style="color:#B9C9DC;margin-top:12px">AI-enabled surveillance, configured for your property — features depend on camera and recorder compatibility.</p></div></div></section>
 
@@ -169,7 +169,7 @@ def home():
 
 <section class="section dark"><div class="container" style="text-align:center"><p class="eyebrow">SmartShield Security Calculator</p><h2>BUILD YOUR CUSTOM CCTV SECURITY PACKAGE</h2>
 <p style="max-width:680px;margin:10px auto;color:#B9C9DC">Tell us about your property and security requirements. Our smart calculator will recommend a suitable camera setup and provide an estimated project budget.</p>
-<a class="btn btn-cyan" href="calculator/index.html">Build My Security Package</a>
+<a class="btn btn-light" href="calculator/index.html">Build My Security Package</a>
 <p style="margin-top:14px;color:#8FA3B8;font-size:.92rem">Preliminary estimate only — final pricing depends on site inspection. Demo rates are used until the business owner updates them.</p></div></section>
 
 <section class="section"><div class="container"><p class="eyebrow">Why Choose SmartShield?</p><h2>Why Choose SmartShield Security?</h2>
@@ -246,19 +246,32 @@ def service_page(slug, title, desc, h1, img, intro, benefits, steps):
       ("Can I view the system on my phone?", "Yes, where your system supports remote viewing, we configure mobile access and show you how to use it."),
       ("Do you cover my area of Lahore?", "We serve DHA, Gulberg, Johar Town, Model Town, Wapda Town and Bahria Town Lahore, and other Lahore areas on confirmation."),
     ]
+    guides_map = {
+      "cctv-installation": [("Cost of CCTV Installation in Lahore", "../../blog/cost-of-cctv-camera-installation-in-lahore/index.html"), ("Home Security Camera Installation", "../../blog/home-security-camera-installation/index.html"), ("Bullet vs Dome Cameras", "../../blog/bullet-vs-dome-cctv-cameras/index.html")],
+      "home-security": [("Home Security Camera Installation", "../../blog/home-security-camera-installation/index.html"), ("Cost of CCTV Installation in Lahore", "../../blog/cost-of-cctv-camera-installation-in-lahore/index.html"), ("Night Vision Camera Prices", "../../blog/night-vision-cctv-camera-price-in-pakistan/index.html")],
+      "office-security": [("Office CCTV Installation Guide", "../../blog/office-cctv-installation/index.html"), ("DVR vs NVR", "../../blog/dvr-vs-nvr/index.html"), ("IP Camera Prices Guide", "../../blog/ip-camera-prices-guide/index.html")],
+      "shop-commercial-security": [("CCTV Installation for Shops", "../../blog/cctv-installation-for-shops/index.html"), ("Cost of CCTV Installation in Lahore", "../../blog/cost-of-cctv-camera-installation-in-lahore/index.html"), ("Bullet vs Dome Cameras", "../../blog/bullet-vs-dome-cctv-cameras/index.html")],
+      "ip-camera-installation": [("IP Camera Prices Guide", "../../blog/ip-camera-prices-guide/index.html"), ("DVR vs NVR", "../../blog/dvr-vs-nvr/index.html"), ("Hikvision vs Dahua", "../../blog/hikvision-vs-dahua-cctv-cameras/index.html")],
+      "ai-camera-solutions": [("Hikvision vs Dahua", "../../blog/hikvision-vs-dahua-cctv-cameras/index.html"), ("Night Vision Camera Prices", "../../blog/night-vision-cctv-camera-price-in-pakistan/index.html"), ("IP Camera Prices Guide", "../../blog/ip-camera-prices-guide/index.html")],
+      "dvr-nvr-installation": [("DVR vs NVR", "../../blog/dvr-vs-nvr/index.html"), ("IP Camera Prices Guide", "../../blog/ip-camera-prices-guide/index.html"), ("Cost of CCTV Installation in Lahore", "../../blog/cost-of-cctv-camera-installation-in-lahore/index.html")],
+      "cctv-repair": [("Cost of CCTV Installation in Lahore", "../../blog/cost-of-cctv-camera-installation-in-lahore/index.html"), ("DVR vs NVR", "../../blog/dvr-vs-nvr/index.html"), ("Wireless Camera Price Guide", "../../blog/wireless-cctv-camera-price-guide/index.html")],
+      "cctv-maintenance": [("DVR vs NVR", "../../blog/dvr-vs-nvr/index.html"), ("Home Security Camera Installation", "../../blog/home-security-camera-installation/index.html"), ("Office CCTV Installation Guide", "../../blog/office-cctv-installation/index.html")],
+      "remote-monitoring": [("Wireless Camera Price Guide", "../../blog/wireless-cctv-camera-price-guide/index.html"), ("IP Camera Prices Guide", "../../blog/ip-camera-prices-guide/index.html"), ("Home Security Camera Installation", "../../blog/home-security-camera-installation/index.html")],
+    }
+    guides = "".join(f'<li><a href="{u}">{t}</a></li>' for t, u in guides_map.get(slug, guides_map["cctv-installation"]))
     extra = f"""<script type="application/ld+json">{{"@context":"https://schema.org","@type":"Service","name":"{h1}","provider":{{"@type":"LocalBusiness","name":"SmartShield Security","telephone":"+92-305-9502580"}},"areaServed":"Lahore, Pakistan"}}</script>
 <script type="application/ld+json">{{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{{"@type":"ListItem","position":1,"name":"Home","item":"{BASE}/"}},{{"@type":"ListItem","position":2,"name":"Services","item":"{BASE}/services/cctv-installation/"}},{{"@type":"ListItem","position":3,"name":"{h1}","item":"{canon}"}}]}}</script>"""
     body = f"""
 <main><div class="container"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="../../index.html">Home</a> &rsaquo; <a href="../cctv-installation/index.html">Services</a> &rsaquo; {h1}</nav></div>
 <section class="section"><div class="container"><p class="eyebrow">SmartShield Security — Lahore</p><h1>{h1}</h1>
 <p class="lead">{intro}</p>
-<div class="btn-row"><a class="btn btn-primary" href="{WA}" target="_blank" rel="noopener">WhatsApp Us</a><a class="btn btn-cyan" href="../../calculator/index.html">Calculate Your CCTV Budget</a><a class="btn btn-outline" href="tel:+923059502580">Call {PHONE}</a></div>
+<div class="btn-row"><a class="btn btn-primary" href="../../calculator/index.html">Calculate Your CCTV Budget</a><a class="btn wa-btn" href="{WA}" target="_blank" rel="noopener">WhatsApp Us</a></div>
 <img src="{p}assets/images/{img}" alt="{h1} — SmartShield Security Lahore" width="800" height="600" loading="lazy" style="margin-top:28px;border-radius:14px">
 <h2 style="margin-top:32px">What You Get</h2><ul class="checklist">{''.join(f'<li>{b}</li>' for b in benefits)}</ul>
 <h2 style="margin-top:32px">How It Works</h2><div class="steps">{''.join(f'<div class="step"><h3>{s}</h3></div>' for s in steps)}</div>
 <p class="note blue" style="margin-top:20px">AI detection, smart alerts and license plate recognition are only available where the selected camera and recorder support them. We confirm compatibility before recommending these features.</p>
-<h2 style="margin-top:32px">Related Services</h2><ul>{others}</ul>
-<p style="margin-top:20px"><a href="../../services/cctv-installation/index.html">CCTV Installation</a> &middot; <a href="../../calculator/index.html">Smart Calculator</a> &middot; <a href="../../contact/index.html">Contact Us</a></p>
+<div class="related"><h2>Related Services</h2><ul>{others}</ul></div>
+<div class="related"><h2>Related Guides</h2><ul>{guides}</ul></div>
 </div></section>
 """
     body += faq_block(faqs) + cta_block(p)
@@ -429,7 +442,7 @@ def calculator_page():
 <p><strong>Recommended Package: <span id="r-tier"></span></strong></p><p id="r-why"></p>
 <p class="note" style="margin-top:16px">THIS IS A PRELIMINARY ESTIMATE, NOT A FINAL QUOTATION. Final pricing depends on site inspection, cable length, equipment availability, and installation requirements.</p>
 <p class="note blue">Demo rates — to be updated by the business owner. Prices shown use placeholder demo rates in PKR.</p>
-<div class="btn-row"><button type="button" class="btn btn-primary" id="whatsapp-btn">Share This Package on WhatsApp</button><button type="button" class="btn btn-outline" id="modify-btn">Modify My Requirements</button><button type="button" class="btn btn-outline" id="restart-btn">Start a New Calculation</button></div>
+<div class="btn-row"><button type="button" class="btn wa-btn" id="whatsapp-btn">Share This Package on WhatsApp</button><button type="button" class="btn btn-outline" id="modify-btn">Modify My Requirements</button><button type="button" class="btn btn-outline" id="restart-btn">Start a New Calculation</button></div>
 </div></div></div>'''
 
     body = f"""<main><section class="section"><div class="container">
