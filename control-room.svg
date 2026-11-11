@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img">
+<rect width="800" height="600" fill="#071426"/>
+<circle cx="640" cy="120" r="180" fill="#168BFF" opacity="0.12"/>
+<circle cx="120" cy="480" r="140" fill="#22D3EE" opacity="0.10"/>
+
+<g><rect x="150" y="150" width="500" height="220" rx="16" fill="#0D1F35" stroke="#168BFF" stroke-width="3"/>
+<rect x="175" y="175" width="150" height="80" rx="8" fill="#050D19" stroke="#22D3EE"/><rect x="340" y="175" width="150" height="80" rx="8" fill="#050D19" stroke="#168BFF"/><rect x="505" y="175" width="120" height="80" rx="8" fill="#050D19" stroke="#22D3EE"/>
+<rect x="175" y="270" width="220" height="80" rx="8" fill="#050D19" stroke="#168BFF"/><rect x="410" y="270" width="215" height="80" rx="8" fill="#050D19" stroke="#22D3EE"/>
+<text x="400" y="440" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="26" font-weight="bold" text-anchor="middle">Monitoring Control Room</text></g>
+</svg>
