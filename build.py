@@ -17,7 +17,7 @@ def head(title, desc, canon, prefix, extra=""):
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{prefix}assets/css/style.css">
-<script type="application/ld+json">{{"@context":"https://schema.org","@type":["Organization","LocalBusiness"],"name":"SmartShield Security","url":"{BASE}/","telephone":"+92-305-9502580","areaServed":"Lahore, Pakistan","description":"CCTV camera installation and complete security solutions in Lahore, Pakistan."}}</script>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":["Organization","LocalBusiness"],"name":"SmartShield Security","url":"{BASE}/","telephone":"+92-305-9502580","priceRange":"PKR 12,500 - 155,500","areaServed":["Lahore, Pakistan","DHA Lahore","Gulberg","Johar Town","Model Town","Wapda Town","Bahria Town Lahore","Allama Iqbal Town","Lahore Cantonment","Township, Lahore"],"description":"CCTV camera installation and complete security solutions in Lahore, Pakistan."}}</script>
 {extra}</head><body>
 """
 
@@ -72,25 +72,25 @@ SERVICES = [
   ["Site-based camera placement, not guesswork", "Neat, concealed cabling where possible", "DVR/NVR setup with recording and playback", "Mobile viewing configured before handover", "Testing of every camera before sign-off"],
   ["Share your requirements and property details", "We assess coverage needs and recommend a camera layout", "You receive a package and budget proposal", "Our team installs, configures and tests the system"]),
  ("home-security", "Home CCTV Installation Lahore | SmartShield Security",
-  "Home CCTV security installation in Lahore: indoor and outdoor cameras, night vision, mobile viewing and discreet setup for houses and villas.",
+  "Home CCTV installation in Lahore: indoor and outdoor cameras, night vision and mobile viewing for houses, villas and apartments — discreet setup.",
   "Home CCTV Security Installation in Lahore", "home-security",
   "A home system should protect the people inside without making the house feel like a fortress. We place cameras at entrances, driveways, gates and common areas, use indoor cameras only where you ask for them, and set up mobile viewing so you can check in while you are away.",
   ["Outdoor cameras for gates, driveways and boundaries", "Night vision for low-light areas", "Mobile viewing for the whole family", "Discreet camera placement", "Recording you can review at any time"],
   ["Tell us about your house, floors and entrances", "We recommend camera positions and a recorder", "Installation and mobile setup", "Walkthrough of viewing and playback"]),
- ("office-security", "Office CCTV Security Systems Lahore | SmartShield Security",
-  "Office CCTV security systems in Lahore: entrance, reception, workspace and server-room coverage with controlled access to recordings.",
+ ("office-security", "Office CCTV Installation Lahore | SmartShield Security",
+  "Office CCTV installation in Lahore: entrance, reception, workspace and server-room coverage with controlled access to recordings. Scales as your office grows.",
   "Office CCTV Security Systems in Lahore", "office-security",
   "Offices need coverage that protects staff, visitors and assets while respecting privacy in work areas. We design systems for reception areas, entrances, corridors, storage rooms and server areas, with recording access limited to the people you authorise.",
   ["Entrance and reception coverage", "Corridor and common-area monitoring", "Server and storage room cameras", "Controlled recording access", "Scalable systems as your office grows"],
   ["Share your office layout and coverage needs", "We plan camera positions and access rules", "Installation outside working hours where needed", "Handover with staff training on viewing"]),
- ("shop-commercial-security", "Shop & Commercial CCTV Installation Lahore | SmartShield Security",
-  "Shop and commercial CCTV installation in Lahore: cash counters, entrances, stock areas and customer floors, with clear video for review.",
+ ("shop-commercial-security", "CCTV Installation for Shops in Lahore | SmartShield",
+  "Shop and commercial CCTV installation in Lahore: cash counters, entrances, stock areas and customer floors with clear video for incident review.",
   "Shop & Commercial CCTV Installation in Lahore", "shop-commercial-security",
   "For shops and commercial premises, the camera positions that matter most are the cash counter, entrance, stock room and sales floor. We use cameras that give clear, usable video for reviewing incidents, and recorders sized for the retention period you need.",
   ["Cash counter and entrance cameras", "Stock room and storage coverage", "Clear video for incident review", "Retention matched to your needs", "Systems for single shops and multi-branch premises"],
   ["Tell us about your shop size and risk areas", "We recommend a camera layout and recorder", "Installation with minimal disruption to trading", "Testing and mobile viewing setup"]),
  ("ip-camera-installation", "IP Camera Installation Lahore | SmartShield Security",
-  "IP camera installation in Lahore: network cameras with high-resolution video, Power over Ethernet and remote viewing over your network.",
+  "IP camera installation in Lahore: high-resolution network cameras with Power over Ethernet, NVR recording and remote viewing over your network.",
   "IP Camera Installation in Lahore", "ip-camera-installation",
   "IP cameras send video over your network, which makes them a good fit for properties that need higher-resolution images, flexible camera placement and remote viewing. We plan the network side properly — PoE switching, cabling and recorder compatibility — so the system stays stable.",
   ["Higher-resolution video than analogue systems", "Power over Ethernet for simpler cabling", "Remote viewing over the network", "Easier to add cameras later", "Compatible NVR recording"],
@@ -102,25 +102,25 @@ SERVICES = [
   ["Human and vehicle detection where supported", "Smart alerts to reduce false alarms", "Motion-based recording options", "Analytics matched to compatible hardware", "Honest advice on what AI can and cannot do"],
   ["Tell us what you want the system to detect", "We check camera and recorder compatibility", "We propose an AI-compatible package", "Installation, configuration and alert testing"]),
  ("dvr-nvr-installation", "DVR & NVR Installation Lahore | SmartShield Security",
-  "DVR and NVR installation in Lahore: recorders, hard-disk storage, playback setup and recording retention planned around your cameras.",
+  "DVR and NVR installation in Lahore: recorders, hard-disk storage, playback setup and recording retention planned around your cameras and needs.",
   "DVR & NVR Installation in Lahore", "dvr-nvr-installation",
   "The recorder is the part of the system you rely on when something happens — so it needs the right hard disk, the right retention period and a playback setup you can actually use. We install DVRs for analogue systems and NVRs for IP systems, and size storage around your camera count and retention needs.",
   ["DVR for analogue and NVR for IP systems", "Hard-disk storage sized to your retention period", "Playback and backup setup", "Remote viewing configuration", "Existing recorder replacement and upgrades"],
   ["Tell us your camera count and retention needs", "We specify a compatible recorder and hard disk", "Installation and storage configuration", "Playback walkthrough"]),
- ("cctv-repair", "CCTV Camera Repair Lahore | SmartShield Security",
-  "CCTV camera repair in Lahore: fault diagnosis for cameras, recorders, cabling, power supplies and remote viewing problems.",
+ ("cctv-repair", "CCTV Camera Repair in Lahore | SmartShield Security",
+  "CCTV camera repair in Lahore: fast fault diagnosis for cameras, recorders, cabling, power supplies and remote viewing problems — homes and offices.",
   "CCTV Camera Repair in Lahore", "cctv-repair",
   "When a camera goes dark, a recorder stops saving footage or remote viewing stops working, the fault is usually in one place — a camera, a cable, a power supply or a setting. We diagnose the fault first, explain what is wrong, and repair or replace only what is needed.",
   ["Fault diagnosis before any replacement", "Camera, cable and power-supply repairs", "Recorder and hard-disk checks", "Remote viewing troubleshooting", "Clear explanation of the fault and the fix"],
   ["Describe the problem and your system", "We diagnose the fault on site", "You approve the repair before work starts", "Repair, testing and confirmation"]),
  ("cctv-maintenance", "CCTV Maintenance Services Lahore | SmartShield Security",
-  "CCTV maintenance in Lahore: regular camera cleaning, recorder and storage checks, firmware and settings review, and fault prevention.",
+  "CCTV maintenance in Lahore: regular camera cleaning, recorder and storage checks, settings review and fault prevention for homes and offices.",
   "CCTV Maintenance in Lahore", "cctv-maintenance",
   "CCTV systems fail quietly — a lens gets dusty, a hard disk fills up, a camera drifts out of position. Regular maintenance catches those problems before footage is needed. We check cameras, connections, storage and recording, and report what was done and what needs attention.",
   ["Camera cleaning and re-alignment", "Recorder, hard-disk and storage checks", "Cable and power-supply inspection", "Settings and recording review", "A short report after each visit"],
   ["Tell us about your existing system", "We agree a maintenance schedule", "Scheduled checks and cleaning", "Report with any recommended fixes"]),
  ("remote-monitoring", "Remote CCTV Monitoring Lahore | SmartShield Security",
-  "Remote CCTV monitoring setup in Lahore: view your cameras live on your phone, receive alerts and review recordings from anywhere.",
+  "Remote CCTV monitoring setup in Lahore: view your cameras live on your phone, receive alerts and review recordings from anywhere, anytime. Alerts where supported.",
   "Remote CCTV Monitoring in Lahore", "remote-monitoring",
   "Remote monitoring means you can open your phone and see your property live, review recordings and receive alerts when the system is set up for them. We configure secure remote access on your recorder and phone, and show you how to use viewing and playback properly.",
   ["Live viewing on your phone", "Playback from anywhere", "Alerts where the system supports them", "Secure remote access setup", "Guided setup for your devices"],
@@ -229,9 +229,11 @@ def home():
       ("Which areas of Lahore do you serve?", "We serve DHA, Gulberg, Johar Town, Model Town, Wapda Town and Bahria Town Lahore, and other Lahore areas on confirmation."),
     ]
     body += faq_block(faqs) + cta_block("")
-    return head("CCTV Camera Installation Lahore | SmartShield Security — Advanced Security, Smarter Protection",
-      "SmartShield Security: professional CCTV camera installation and complete security solutions in Lahore. IP, HD and AI cameras, DVR/NVR setup and mobile monitoring.",
-      BASE + "/", "") + header("", "Home") + body + "</main>" + footer("")
+    import json as _json
+    _faq_extra = '<script type="application/ld+json">' + _json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}) + "</script>"
+    return head("CCTV Camera Installation Lahore | SmartShield Security",
+      "SmartShield Security: CCTV camera installation in Lahore for homes, offices and shops. Modern cameras, clean installation and mobile monitoring.",
+      BASE + "/", "", extra=_faq_extra) + header("", "Home") + body + "</main>" + footer("")
 
 # ---------- SERVICE PAGES ----------
 IMG_MAP = {"cctv-installation":"installation.svg","home-security":"dome-camera.svg","office-security":"control-room.svg","shop-commercial-security":"bullet-camera.svg","ip-camera-installation":"ip-camera.svg","ai-camera-solutions":"hero-camera.svg","dvr-nvr-installation":"nvr-system.svg","cctv-repair":"installation.svg","cctv-maintenance":"ptz-camera.svg","remote-monitoring":"control-room.svg"}
@@ -278,8 +280,16 @@ def service_page(slug, title, desc, h1, img, intro, benefits, steps):
     return head(title, desc, canon, p, extra) + header(p, "Services") + body + "</main>" + footer(p)
 
 # ---------- SIMPLE PAGES ----------
-def simple_page(path, title, desc, canon, h1, inner, prefix):
-    return head(title, desc, canon, prefix) + header(prefix) + f'<main><section class="section"><div class="container"><h1>{h1}</h1>{inner}</div></section></main>' + footer(prefix)
+def simple_page(path, title, desc, canon, h1, inner, prefix, crumbs=None):
+    extra = ""
+    crumb_html = ""
+    if crumbs:
+        import json as _json
+        items = [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(crumbs)]
+        extra = '<script type="application/ld+json">' + _json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}) + "</script>"
+        links = " &rsaquo; ".join(f'<a href="{u}">{n}</a>' for n, u in crumbs[:-1]) + " &rsaquo; " + crumbs[-1][0]
+        crumb_html = f'<div class="container"><nav class="breadcrumb" aria-label="Breadcrumb">{links}</nav></div>'
+    return head(title, desc, canon, prefix, extra) + header(prefix) + f'<main>{crumb_html}<section class="section"><div class="container"><h1>{h1}</h1>{inner}</div></section></main>' + footer(prefix)
 
 def build_all():
     write("index.html", home())
@@ -288,25 +298,25 @@ def build_all():
     # About
     write("about/index.html", simple_page("about/index.html",
       "About SmartShield Security | CCTV Installation Lahore",
-      "About SmartShield Security — CCTV camera installation and complete security solutions in Lahore, Pakistan.",
+      "About SmartShield Security — CCTV camera installation and complete security solutions in Lahore, Pakistan. How we plan, install and support systems.",
       BASE + "/about/", "About SmartShield Security",
       """<p class="lead">SmartShield Security provides CCTV camera installation and complete security solutions in Lahore, Pakistan.</p>
 <p>We work with homes, offices, shops, schools, warehouses and commercial properties. Our focus is straightforward: the right cameras in the right places, installed neatly, configured properly, and supported after handover.</p>
 <h2>What We Do</h2><ul class="checklist"><li>CCTV camera installation for homes, offices and shops</li><li>IP, HD and AI-enabled camera systems, where compatible</li><li>DVR and NVR installation and configuration</li><li>Remote mobile viewing setup</li><li>CCTV repair and maintenance</li></ul>
 <h2>How We Work</h2><p>We start by understanding your property and what needs to be covered, recommend a camera layout and package, install and test the system, and show you how to use viewing and playback.</p>
 <p>We do not publish invented experience claims, customer numbers or credentials. What we promise is careful planning, professional installation and honest advice about what your equipment can do.</p>
-<p><a class="btn btn-primary" href="../calculator/index.html">Build Your CCTV Package</a> <a class="btn btn-outline" href="../contact/index.html">Contact Us</a></p>""", "../"))
+<p><a class="btn btn-primary" href="../calculator/index.html">Build Your CCTV Package</a> <a class="btn btn-outline" href="../contact/index.html">Contact Us</a></p>""", "../", [("Home", "../index.html"), ("About Us", "../about/index.html")]))
     # Projects
     write("projects/index.html", simple_page("projects/index.html",
-      "Recent Projects | SmartShield Security Lahore",
-      "SmartShield Security projects in Lahore. No project portfolio has been published yet — completed projects will be added here.",
+      "Recent CCTV Projects in Lahore | SmartShield Security",
+      "SmartShield Security CCTV projects in Lahore. No project portfolio has been published yet — completed projects will be added here soon. Meanwhile, see our services.",
       BASE + "/projects/", "Recent Projects",
       """<div class="placeholder"><p><strong>No project portfolio has been published yet.</strong></p><p>We do not invent customer projects. Completed projects will be added here with the customer's permission, including project type, location, installed camera system and a short description.</p></div>
-<p style="margin-top:20px">If you would like to discuss a project for your property, <a href="../calculator/index.html">build a CCTV package</a> or <a href="../contact/index.html">contact us</a>.</p>""", "../"))
+<p style="margin-top:20px">If you would like to discuss a project for your property, <a href="../calculator/index.html">build a CCTV package</a> or <a href="../contact/index.html">contact us</a>.</p>""", "../", [("Home", "../index.html"), ("Projects", "../projects/index.html")]))
     # Social
     write("social-media/index.html", simple_page("social-media/index.html",
-      "Connect with SmartShield Security | Social Media",
-      "Connect with SmartShield Security on Facebook, Instagram, TikTok, YouTube, LinkedIn and WhatsApp.",
+      "SmartShield Security on Social Media | CCTV Lahore",
+      "Connect with SmartShield Security on Facebook, Instagram, TikTok, YouTube and LinkedIn — CCTV tips, new camera solutions and security updates.",
       BASE + "/social-media/", "CONNECT WITH SMARTSHIELD SECURITY",
       """<p class="lead">Follow SmartShield Security for CCTV tips, new camera solutions and security updates.</p>
 <div class="social-grid" style="margin-top:24px">
@@ -316,11 +326,11 @@ def build_all():
 <div class="card"><h3>YouTube</h3><p>Social profile link to be added.</p><a href="#" data-social="youtube" class="btn btn-outline">YouTube</a></div>
 <div class="card"><h3>LinkedIn</h3><p>Social profile link to be added.</p><a href="#" data-social="linkedin" class="btn btn-outline">LinkedIn</a></div>
 <div class="card"><h3>WhatsApp</h3><p>Chat with us directly on WhatsApp.</p><a href="https://wa.me/923059502580" target="_blank" rel="noopener" class="btn wa-btn">WhatsApp</a></div>
-</div><p style="margin-top:16px">All social links are managed from one configuration file (SOCIAL_LINKS in assets/js/pricing-config.js) and can be updated by the business owner.</p>""", "../"))
+</div><p style="margin-top:16px">All social links are managed from one configuration file (SOCIAL_LINKS in assets/js/pricing-config.js) and can be updated by the business owner.</p>""", "../", [("Home", "../index.html"), ("Social Media", "../social-media/index.html")]))
     # Contact
     write("contact/index.html", simple_page("contact/index.html",
       "Contact SmartShield Security | CCTV Installation Lahore",
-      "Contact SmartShield Security in Lahore: phone 03059502580, WhatsApp +92 305 9502580. CCTV installation and security solutions.",
+      "Contact SmartShield Security in Lahore: call 03059502580 or WhatsApp +92 305 9502580 for CCTV installation and security solutions. Get a free consultation.",
       BASE + "/contact/", "Contact SmartShield Security",
       """<p class="lead">SmartShield Security — CCTV Camera Installation &amp; Security Solutions, Lahore, Pakistan.</p>
 <div class="grid grid-2"><div class="card"><h3>Call or WhatsApp</h3><p>Phone: <a href="tel:+923059502580">03059502580</a><br>WhatsApp: <a href="https://wa.me/923059502580" target="_blank" rel="noopener">+92 305 9502580</a></p>
@@ -334,31 +344,31 @@ def build_all():
 <div class="field"><label for="cf-service">Service</label><select id="cf-service"><option>CCTV Camera Installation</option><option>Home CCTV Security</option><option>Office Security Systems</option><option>Shop &amp; Commercial Security</option><option>IP Camera Installation</option><option>DVR &amp; NVR Installation</option><option>CCTV Camera Repair</option><option>CCTV Maintenance</option><option>Remote Monitoring</option><option>Other</option></select></div>
 <div class="field"><label for="cf-area">City / Area</label><input id="cf-area" type="text" value="Lahore"></div>
 <div class="field"><label for="cf-message">Message</label><textarea id="cf-message" rows="4"></textarea></div>
-<button class="btn btn-primary" type="submit">Send via WhatsApp</button></form>""", "../"))
+<button class="btn btn-primary" type="submit">Send via WhatsApp</button></form>""", "../", [("Home", "../index.html"), ("Contact Us", "../contact/index.html")]))
     # Privacy / Terms
     write("privacy-policy/index.html", simple_page("privacy-policy/index.html",
-      "Privacy Policy | SmartShield Security",
-      "Privacy policy for SmartShield Security, Lahore. How contact details shared through the website are used.",
+      "Privacy Policy | SmartShield Security, Lahore, Lahore",
+      "Privacy policy for SmartShield Security, Lahore. How contact details shared through the website are used, stored and protected by us. Your details stay private.",
       BASE + "/privacy-policy/", "Privacy Policy",
       """<p>SmartShield Security respects your privacy. This page explains what happens to information you share with us through this website.</p>
 <h2>Information You Share</h2><p>When you use the calculator or contact form, you may share your name, phone number, area and property details. That information is used only to prepare a quotation and contact you about your enquiry.</p>
 <h2>WhatsApp</h2><p>Enquiries and calculator results are shared by you through WhatsApp. Once you send a WhatsApp message, WhatsApp's own privacy terms also apply.</p>
 <h2>What We Do Not Do</h2><p>We do not sell your contact details, and we do not use tracking that identifies you personally beyond normal website analytics, if any are added in future.</p>
-<p>Contact us on <a href="tel:+923059502580">03059502580</a> with any privacy question.</p>""", "../"))
+<p>Contact us on <a href="tel:+923059502580">03059502580</a> with any privacy question.</p>""", "../", [("Home", "../index.html"), ("Privacy Policy", "../privacy-policy/index.html")]))
     write("terms/index.html", simple_page("terms/index.html",
-      "Terms & Conditions | SmartShield Security",
-      "Terms and conditions for SmartShield Security CCTV services in Lahore.",
+      "Terms & Conditions | SmartShield Security Lahore Lahore",
+      "Terms and conditions for SmartShield Security CCTV services in Lahore: estimates, services, warranties and how to contact us. Read before using our services.",
       BASE + "/terms/", "Terms & Conditions",
       """<p>These terms apply to CCTV and security services provided by SmartShield Security in Lahore, Pakistan.</p>
 <h2>Estimates</h2><p>Calculator results are preliminary estimates based on demo rates, not final quotations. Final pricing depends on site inspection, cable length, equipment availability and installation requirements.</p>
 <h2>Services</h2><p>Services are provided as agreed in the package proposal. Equipment features, including AI detection, depend on the compatibility of the camera and recorder supplied.</p>
-<h2>Contact</h2><p>For questions about these terms, contact SmartShield Security on <a href="tel:+923059502580">03059502580</a> or via <a href="https://wa.me/923059502580">WhatsApp</a>.</p>""", "../"))
+<h2>Contact</h2><p>For questions about these terms, contact SmartShield Security on <a href="tel:+923059502580">03059502580</a> or via <a href="https://wa.me/923059502580">WhatsApp</a>.</p>""", "../", [("Home", "../index.html"), ("Terms & Conditions", "../terms/index.html")]))
     # 404
-    write("404.html", head("Page Not Found | SmartShield Security", "The page you are looking for does not exist. Return to the SmartShield Security homepage.", BASE + "/404.html", "") + header("") + '<main><section class="section"><div class="container" style="text-align:center"><h1>Page Not Found</h1><p>Sorry — that page does not exist or has moved.</p><div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="index.html">Go to Homepage</a><a class="btn btn-outline" href="calculator/index.html">Smart Calculator</a></div></div></section></main>' + footer(""))
+    write("404.html", head("Page Not Found | SmartShield Security Lahore Lahore", "The page you are looking for does not exist. Return to the SmartShield Security homepage or build your CCTV package in Lahore. Or call 03059502580.", BASE + "/404.html", "") + header("") + '<main><section class="section"><div class="container" style="text-align:center"><h1>Page Not Found</h1><p>Sorry — that page does not exist or has moved.</p><div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="index.html">Go to Homepage</a><a class="btn btn-outline" href="calculator/index.html">Smart Calculator</a></div></div></section></main>' + footer(""))
     # robots, sitemap, readme, nojekyll
     write("robots.txt", "User-agent: *\nAllow: /\n\nSitemap: " + BASE + "/sitemap.xml\n")
     urls = ["", "about/", "calculator/", "projects/", "social-media/", "contact/", "privacy-policy/", "terms/"] + [f"services/{s}/" for s, *_ in SERVICES]
-    sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>{BASE}/{u}</loc></url>\n' for u in urls) + "</urlset>\n"
+    sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>{BASE}/{u}</loc><lastmod>2026-11-11</lastmod></url>\n' for u in urls) + "</urlset>\n"
     write("sitemap.xml", sm)
     write(".nojekyll", "")
     write("README.md", "# SmartShield Security\n\nCCTV camera installation & complete security solutions — Lahore, Pakistan.\n\nPhone: 03059502580 | WhatsApp: +92 305 9502580\n\n## Hosting\nStatic site for GitHub Pages. Base URL: https://mananwattoo61-cell.github.io/smartshield-security/\n\n## Pricing\nCalculator prices are DEMO rates in `assets/js/pricing-config.js` (`DEMO_MODE: true`).\nUpdate them before publishing real prices. The result screen always states that\nthe figure is a preliminary estimate, not a final quotation.\n\n## Social links\nEdit `SOCIAL_LINKS` in `assets/js/pricing-config.js`. Empty = link to be added.\n\n## Local test\n`python3 -m http.server 8000` from this folder, then open http://localhost:8000/\n")
@@ -446,16 +456,17 @@ def calculator_page():
 </div></div></div>'''
 
     body = f"""<main><section class="section"><div class="container">
-<p class="eyebrow">SmartShield Security Calculator</p><h1>BUILD YOUR CUSTOM CCTV SECURITY PACKAGE</h1>
-<p class="lead">Tell us about your property and security requirements. Our smart calculator will recommend a suitable camera setup and provide an estimated project budget.</p>
+<p class="eyebrow">SmartShield Security Calculator</p><h1>CCTV Cost Calculator Lahore</h1>
+<p class="lead">Use this free CCTV cost calculator for Lahore to build your custom CCTV security package. Tell us about your property and security requirements — the calculator recommends a suitable camera setup and gives you a preliminary budget estimate.</p>
+<p>Planning a system? Compare <a href="../packages/index.html">CCTV packages in Lahore</a>, read the <a href="../blog/cost-of-cctv-camera-installation-in-lahore/index.html">CCTV installation cost guide</a>, or <a href="../contact/index.html">contact SmartShield Security</a>.</p>
 <div class="calc" id="calc-form" style="margin-top:28px"><p id="step-label">Step 1 of 8</p><div class="progress"><div class="progress-bar" id="progress-bar"></div></div>
 {steps_html}</div>
 {result}
 <p style="margin-top:20px"><a href="../services/cctv-installation/index.html">CCTV Installation</a> &middot; <a href="../contact/index.html">Contact Us</a></p>
 </div></section></main>"""
-    extra = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the calculator price a final quotation?","acceptedAnswer":{"@type":"Answer","text":"No. It is a preliminary estimate based on demo rates. Final pricing depends on site inspection, cable length, equipment availability and installation requirements."}}]}</script>'
-    html = head("Smart CCTV Package Calculator | SmartShield Security Lahore",
-      "Build your custom CCTV security package in Lahore: choose property type, cameras, recording and equipment, get a preliminary estimate and share it on WhatsApp.",
+    extra = '<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is the calculator price a final quotation?","acceptedAnswer":{"@type":"Answer","text":"No. It is a preliminary estimate based on demo rates. Final pricing depends on site inspection, cable length, equipment availability and installation requirements."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mananwattoo61-cell.github.io/smartshield-security/"},{"@type":"ListItem","position":2,"name":"CCTV Cost Calculator","item":"https://mananwattoo61-cell.github.io/smartshield-security/calculator/"}]}</script>'
+    html = head("CCTV Cost Calculator Lahore | SmartShield Security",
+      "CCTV cost calculator Lahore: build your custom CCTV package — choose property, cameras, recording and equipment for a preliminary estimate. Free to use, no sign-up.",
       BASE + "/calculator/", p, extra) + header(p, "Smart Calculator") + body + footer(p)
     # calculator.js must load after main.js in footer; add it before </body>
     html = html.replace("</body>", '<script src="../assets/js/calculator.js"></script>\n</body>')

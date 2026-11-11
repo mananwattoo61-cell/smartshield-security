@@ -43,13 +43,21 @@ def related_block(items):
     return f'<div class="related"><h2>Related Pages</h2><ul>{lis}</ul></div>'
 
 def pkg_card(name, res, price, features, prefix="", upgrades=None):
+    import json as _json
     feats = "".join(f"<li>{f}</li>" for f in features)
     up = f'<p class="pkg-upgrades"><strong>Upgrades:</strong> {upgrades}</p>' if upgrades else ""
+    _price_num = int(str(price).replace(",", ""))
+    _schema = ('<script type="application/ld+json">' + _json.dumps({
+        "@context": "https://schema.org", "@type": "Product",
+        "name": name, "description": res + " — CCTV camera package in Lahore by SmartShield Security.",
+        "offers": {"@type": "Offer", "priceCurrency": "PKR", "price": _price_num,
+                   "availability": "https://schema.org/InStock",
+                   "url": BASE + "/packages/"}}) + "</script>")
     return (f'<article class="pkg"><div class="pkg-head"><h3>{name}</h3><p>{res}</p></div>'
             f'<div class="pkg-body"><div class="pkg-price">Rs {price}<small>one-time package price</small></div>'
             f'<ul class="checklist">{feats}</ul>{up}'
             f'<div class="btn-row"><a class="btn btn-primary" href="{prefix}calculator/index.html">Get an Estimate</a>'
-            f'<a class="btn wa-btn" href="https://wa.me/923059502580" target="_blank" rel="noopener">WhatsApp Us</a></div></div></article>')
+            f'<a class="btn wa-btn" href="https://wa.me/923059502580" target="_blank" rel="noopener">WhatsApp Us</a></div></div></article>' + _schema)
 
 # Exact packages, as published (prices + features). Descriptions rewritten; numbers kept.
 HOME_PKGS = [
@@ -170,7 +178,7 @@ def new_home():
 <p>SmartShield Security installs complete CCTV and security systems across Lahore. Every installation is planned around your property's layout and your security needs — not a fixed box package.</p>
 <div class="btn-row"><a class="btn btn-primary" href="contact/index.html">Get Free Security Consultation</a><a class="btn btn-ghost-light" href="calculator/index.html">Calculate Your CCTV Budget</a></div>
 <div class="hero-badges"><span>Lahore, Pakistan</span><span>Phone 03059502580</span><span>WhatsApp Anytime</span></div>
-</div><figure class="hero-visual"><img src="{_hero_src}" alt="Professional technician installing a CCTV security camera on a modern home in Lahore" width="1400" height="933"><figcaption>Professional CCTV installation by SmartShield Security, Lahore.</figcaption></figure></div></section>
+</div><figure class="hero-visual"><img src="{_hero_src}" alt="Professional technician installing a CCTV security camera on a modern home in Lahore" width="900" height="600"><figcaption>Professional CCTV installation by SmartShield Security, Lahore.</figcaption></figure></div></section>
 
 <section class="trust-strip"><div class="container trust-strip-inner">
 <div class="trust-item">{_check()} Professional installation</div>
@@ -308,9 +316,11 @@ def new_home():
       ("Which CCTV camera brand is best in Pakistan?", "Some of the best CCTV camera brands in Pakistan include Hikvision, Dahua, IMOU and CP Plus. We recommend a brand based on your budget and requirements, for long-term reliability and clear footage."),
     ]
     body += faq_block(faqs) + cta_block("")
-    return head("CCTV Camera Installation Lahore | SmartShield Security — Professional Team, Honest Pricing",
-      "SmartShield Security: professional CCTV camera installation in Lahore for homes, offices and shops. Modern cameras, clean installation, mobile monitoring and honest pricing guidance.",
-      BASE + "/", "") + header("", "Home") + body + "</main>" + footer("")
+    import json as _json2
+    _faq_extra = '<script type="application/ld+json">' + _json2.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faqs]}) + "</script>"
+    return head("CCTV Camera Installation Lahore | SmartShield Security",
+      "SmartShield Security: CCTV camera installation in Lahore for homes, offices and shops. Modern cameras, clean installation and honest pricing.",
+      BASE + "/", "", extra=_faq_extra) + header("", "Home") + body + "</main>" + footer("")
 
 # ---------- NEW PAGES ----------
 # Each entry: (path, title, desc, h1, prefix, inner_html, faqs, crumbs, img, img_alt)
@@ -323,8 +333,8 @@ NEW_PAGES = []
 
 # --- Products ---
 NEW_PAGES.append(("products/index.html",
- "CCTV Products in Lahore | Cameras, DVR & NVR | SmartShield Security",
- "CCTV products in Lahore: dome, bullet, PTZ, IP and Wi-Fi cameras, DVR and NVR recorders, hard disks and accessories from trusted brands.",
+ "CCTV Camera Products in Lahore | SmartShield Security",
+ "CCTV products in Lahore: dome, bullet, PTZ, IP and Wi-Fi cameras, DVR and NVR recorders, hard disks and accessories from trusted brands in Pakistan.",
  "CCTV Products in Lahore", "../",
  """<p class="lead">SmartShield Security supplies and installs CCTV products chosen for your property — not a fixed kit. Below is an overview of the products we work with. Brands commonly recommended in Pakistan include Hikvision, Dahua, IMOU and CP Plus.</p>
 <h2>Cameras</h2>
@@ -363,7 +373,7 @@ PRICENOTE
 
 NEW_PAGES.append(pricing_page("2mp-cctv-camera-price-in-lahore",
  "2MP CCTV Camera Price in Lahore | SmartShield Security",
- "2MP CCTV camera price in Lahore: what a 2MP camera costs, what affects the price, and how to choose a 2MP system for home or shop.",
+ "2MP CCTV camera price in Lahore: what a 2MP camera costs, what affects the price, and how to choose a 2MP system for your home or shop. Compare 2MP and 4K first.",
  "2MP CCTV Camera Price in Lahore",
  "A 2MP camera records in Full HD (1080p) and is the most common choice for homes and small shops in Lahore. It gives clear video for entrances, rooms and counters at a lower cost than higher-resolution cameras — and it needs less storage than 4MP or 4K systems.",
  ["Camera brand and build quality", "Indoor dome or outdoor bullet housing", "Night vision range and lens type", "Recorder (DVR) and hard-disk size", "Cabling length and installation complexity"],
@@ -376,7 +386,7 @@ NEW_PAGES.append(pricing_page("2mp-cctv-camera-price-in-lahore",
   ("Does a 2MP camera work at night?", "Most 2MP cameras include infrared night vision. Check the stated night vision range and whether the camera is placed where its infrared light can reach.")]))
 NEW_PAGES.append(pricing_page("5mp-cctv-camera-packages",
  "5MP CCTV Camera Packages in Lahore | SmartShield Security",
- "5MP CCTV camera packages in Lahore: what a 5MP package includes, typical costs, and how 5MP compares with 2MP and 4MP systems.",
+ "5MP CCTV camera packages in Lahore: what a 5MP package includes, typical costs, and how 5MP compares with 2MP and 4K systems. See all four 5MP packages.",
  "5MP CCTV Camera Packages in Lahore",
  "A 5MP camera package sits between 4MP and 4K: noticeably sharper than 2MP, with more detail for entrances, parking areas and shop floors, while needing less storage and bandwidth than a full 4K system. A typical package includes the cameras, a compatible DVR, a hard disk, power supply and cabling, plus installation.",
  ["Number of cameras in the package (2, 4, 8 or more)", "Camera type — dome, bullet or a mix", "DVR channel count and hard-disk size", "Cable length and installation complexity", "Mobile viewing and remote access setup"],
@@ -389,7 +399,7 @@ NEW_PAGES.append(pricing_page("5mp-cctv-camera-packages",
   ("Does 5MP need more storage?", "Yes — higher resolution uses more hard-disk space for the same retention period. Storage is sized around your camera count and how many days you want to keep recordings.")]))
 NEW_PAGES.append(pricing_page("4k-cctv-cameras-price-in-pakistan",
  "4K CCTV Cameras Price in Pakistan | SmartShield Security",
- "4K CCTV cameras price in Pakistan: what 4K cameras cost, when 4K is worth it, storage and recorder requirements.",
+ "4K CCTV camera price in Pakistan: what 4K cameras cost, when 4K is worth it, and the storage and recorder requirements for 4K systems. Compare options first.",
  "4K CCTV Cameras Price in Pakistan",
  "A 4K (8MP) camera records roughly four times the detail of a 2MP camera. That matters when you need to identify faces or read number plates from a distance — for example at a main gate, a parking area or a large commercial boundary. For a small room or a shop counter, 4K is often more than you need.",
  ["Camera brand, sensor and lens quality", "Recorder must support 4K — a 2MP DVR will not record 4K", "Hard-disk storage: 4K footage needs much more space", "Network and cabling quality for IP 4K systems", "Number of cameras and installation complexity"],
@@ -401,8 +411,8 @@ NEW_PAGES.append(pricing_page("4k-cctv-cameras-price-in-pakistan",
   ("Do I need a special DVR for 4K cameras?", "Yes. The recorder must support 4K resolution, and the hard disk must be large enough for 4K footage at your chosen retention period."),
   ("Does 4K use more internet for remote viewing?", "Remote viewing uses bandwidth when you watch live or play back. 4K streams use more data than 2MP streams, so a stable connection matters.")]))
 NEW_PAGES.append(pricing_page("ip-camera-prices-in-lahore",
- "IP Camera Prices in Lahore | SmartShield Security",
- "IP camera prices in Lahore: what IP cameras cost, what affects the price, and when an IP system is the right choice.",
+ "IP CCTV Camera Prices in Lahore | SmartShield Security",
+ "IP camera prices in Lahore: what IP cameras cost, what affects the price, and when an IP CCTV system is the right choice for your property. Compare before you buy.",
  "IP Camera Prices in Lahore",
  "IP cameras send video over your network, which gives higher-resolution images, flexible placement and remote viewing. They cost more than analogue cameras, but they are the right choice for properties that need sharp video, Power over Ethernet cabling or a system that can grow camera by camera.",
  ["Resolution — 2MP, 4MP, 5MP or 4K", "Brand and build quality (Hikvision, Dahua, IMOU, CP Plus)", "PoE switch and network cabling", "NVR channel count and hard-disk size", "AI features — only where camera and NVR both support them"],
@@ -414,8 +424,8 @@ NEW_PAGES.append(pricing_page("ip-camera-prices-in-lahore",
   ("Do IP cameras need internet to record?", "No. Recording to the NVR happens on your local network. Internet is only needed for remote viewing on your phone."),
   ("What is PoE in an IP camera system?", "Power over Ethernet sends power and video through one network cable, which simplifies cabling. A PoE switch or PoE NVR is required.")]))
 NEW_PAGES.append(pricing_page("wireless-cctv-camera-price-in-lahore",
- "Wireless CCTV Camera Price in Lahore | SmartShield Security",
- "Wireless CCTV camera price in Lahore: what wireless cameras cost, pros and cons, and when wireless is the right choice.",
+ "Wireless CCTV Camera Price in Lahore | SmartShield",
+ "Wireless CCTV camera price in Lahore: what wireless cameras cost, pros and cons, and when wireless is the right choice for your home. Signal strength matters most.",
  "Wireless CCTV Camera Price in Lahore",
  "A wireless camera connects to your Wi-Fi instead of a cable, which makes installation faster and cleaner — no drilling for long cable runs. Wireless cameras are popular for homes, rented properties and small shops in Lahore, where running cables is difficult or not allowed.",
  ["Camera brand and resolution (2MP, 4MP)", "Indoor or weatherproof outdoor housing", "Battery-powered or mains-powered", "Cloud storage or local SD / NVR storage", "Number of cameras and Wi-Fi coverage needed"],
@@ -437,8 +447,8 @@ def topic_page(slug, title, desc, h1, intro, sections, faqs, img=None, img_alt="
             [("Home", "../index.html"), (h1, f"../{slug}/index.html")], img, img_alt)
 
 NEW_PAGES.append(topic_page("cctv-camera-installation-in-lahore",
- "CCTV Camera Installation in Lahore — Complete Guide | SmartShield Security",
- "CCTV camera installation in Lahore by SmartShield Security: complete guide to services, costs, process and areas served.",
+ "CCTV Installation in Lahore | SmartShield Security",
+ "CCTV camera installation in Lahore by SmartShield Security: services, costs, process and areas covered — a complete guide for homes and businesses.",
  "CCTV Camera Installation in Lahore",
  "SmartShield Security installs CCTV camera systems for homes, offices, shops and commercial properties across Lahore. This page brings everything together: what we install, how the process works, what it typically costs, and which areas we serve.",
  [("What We Install", "<p>Complete CCTV systems — dome, bullet, PTZ, IP and Wi-Fi cameras, DVR and NVR recorders, hard-disk storage, power supplies and mobile viewing. We also install alarm systems, fire alarm systems and biometric attendance machines for offices that need them.</p><p><a href=\"CALCPREFIXservices/cctv-installation/index.html\">CCTV installation service</a> &middot; <a href=\"CALCPREFIXproducts/index.html\">Browse products</a> &middot; <a href=\"CALCPREFIXservices/index.html\">All services</a></p>"),
@@ -453,8 +463,8 @@ NEW_PAGES.append(topic_page("cctv-camera-installation-in-lahore",
  "installation.svg", "CCTV camera installation in Lahore"))
 
 NEW_PAGES.append(topic_page("cctv-maintenance-and-repair-in-lahore",
- "CCTV Maintenance & Repair in Lahore | SmartShield Security",
- "CCTV maintenance and repair in Lahore: fault diagnosis, camera and recorder repairs, scheduled checks and system health reports.",
+ "CCTV Repair & Maintenance in Lahore | SmartShield Security",
+ "CCTV maintenance and repair in Lahore: fault diagnosis, camera and recorder repairs, scheduled checks and system health reports for homes and offices.",
  "CCTV Maintenance and Repair in Lahore",
  "CCTV systems fail quietly — a lens gets dusty, a hard disk fills up, a camera drifts out of position. SmartShield Security maintains and repairs CCTV systems across Lahore, including systems installed by other companies.",
  [("CCTV Repair", "<p>When a camera goes dark, a recorder stops saving footage or remote viewing stops working, the fault is usually in one place — a camera, a cable, a power supply or a setting. We diagnose the fault first, explain what is wrong, and repair or replace only what is needed.</p><p><a href=\"CALCPREFIXservices/cctv-repair/index.html\">CCTV repair service</a></p>"),
@@ -467,8 +477,8 @@ NEW_PAGES.append(topic_page("cctv-maintenance-and-repair-in-lahore",
  "installation.svg", "CCTV maintenance and repair in Lahore"))
 
 NEW_PAGES.append(topic_page("biometric-attendance-machine-in-lahore",
- "Biometric Attendance Machine in Lahore | SmartShield Security",
- "Biometric attendance machines in Lahore: fingerprint, face and card attendance systems for offices, schools and factories.",
+ "Biometric Attendance Machine in Lahore | SmartShield",
+ "Biometric attendance machines in Lahore: fingerprint, face and card attendance systems for offices, schools and factories by SmartShield Security.",
  "Biometric Attendance Machine in Lahore",
  "A biometric attendance machine records staff attendance with a fingerprint, face or card — no paper registers, no manual errors and no buddy punching. SmartShield Security supplies and installs attendance systems for offices, schools, clinics and factories in Lahore.",
  [("Types of Attendance Systems", "<ul class=\"checklist\"><li><strong>Fingerprint attendance</strong> — reliable and affordable for most offices</li><li><strong>Face recognition attendance</strong> — contactless, useful where hygiene matters</li><li><strong>Card and PIN attendance</strong> — simple and fast for large staff numbers</li><li><strong>Combined systems</strong> — fingerprint plus card or face, for flexibility</li></ul>"),
@@ -482,7 +492,7 @@ NEW_PAGES.append(topic_page("biometric-attendance-machine-in-lahore",
 
 NEW_PAGES.append(topic_page("fire-alarm-systems",
  "Fire Alarm Systems in Lahore | SmartShield Security",
- "Fire alarm systems in Lahore: smoke and heat detectors, alarm panels, sirens and early-warning systems for homes, offices and shops.",
+ "Fire alarm systems in Lahore: smoke and heat detectors, alarm panels and sirens for early fire warning in homes, offices and shops. Early warning that saves lives.",
  "Fire Alarm Systems in Lahore",
  "A fire alarm system gives early warning when smoke or heat is detected — the extra minutes it provides can protect lives and property. SmartShield Security supplies and installs fire alarm systems for homes, offices, shops, schools and commercial buildings in Lahore.",
  [("What a Fire Alarm System Includes", "<ul class=\"checklist\"><li><strong>Smoke detectors</strong> — for rooms, corridors and common areas</li><li><strong>Heat detectors</strong> — for kitchens and areas where smoke detectors give false alarms</li><li><strong>Alarm panel</strong> — shows which zone triggered the alarm</li><li><strong>Sirens and sounders</strong> — audible warning across the building</li><li><strong>Manual call points</strong> — so anyone can raise the alarm</li></ul>"),
@@ -495,8 +505,8 @@ NEW_PAGES.append(topic_page("fire-alarm-systems",
  "hero-camera.svg", "Fire alarm system in Lahore"))
 
 NEW_PAGES.append(topic_page("alarm-systems",
- "Alarm Systems in Lahore | SmartShield Security",
- "Alarm systems in Lahore: burglar alarms, door and window sensors, motion detectors, sirens and intrusion alerts for homes and businesses.",
+ "Burglar Alarm Systems in Lahore | SmartShield Security",
+ "Alarm systems in Lahore: burglar alarms, door and window sensors, motion detectors and sirens for homes, offices and shops by SmartShield Security.",
  "Alarm Systems in Lahore",
  "An alarm system warns you the moment someone tries to enter your property — before damage is done. SmartShield Security installs burglar and intrusion alarm systems for homes, offices, shops and warehouses in Lahore, often alongside CCTV.",
  [("What an Alarm System Includes", "<ul class=\"checklist\"><li><strong>Door and window sensors</strong> — trigger when an entry point opens</li><li><strong>Motion detectors</strong> — cover rooms, hallways and corridors</li><li><strong>Control panel</strong> — arms and disarms the system</li><li><strong>Siren</strong> — loud audible warning to deter intruders</li><li><strong>Keypad or remote</strong> — easy arming for the whole family or staff</li></ul>"),
@@ -510,8 +520,8 @@ NEW_PAGES.append(topic_page("alarm-systems",
 
 # --- Services hub ---
 NEW_PAGES.append(("services/index.html",
- "Our Services | CCTV, Alarms & Security Systems in Lahore | SmartShield Security",
- "All SmartShield Security services in Lahore: CCTV installation, IP cameras, DVR/NVR, repair, maintenance, remote monitoring, alarms and more.",
+ "Our CCTV & Security Services in Lahore | SmartShield",
+ "SmartShield Security services in Lahore: CCTV installation, IP cameras, DVR/NVR, repair, maintenance, alarms, fire alarms and biometric systems.",
  "Our Services", "../",
  """<p class="lead">Every service below is provided by SmartShield Security in Lahore, Pakistan. Click a service for full details, or <a href="CALCPREFIXcalculator/index.html">build your CCTV package</a> to get a preliminary estimate.</p>
 <h2>CCTV &amp; Camera Services</h2>
@@ -571,26 +581,26 @@ AREA_FAQS = [("How much does CCTV installation cost in my area?", "Prices depend
  ("Can I view my cameras on my phone?", "Yes, where your system supports remote viewing, we configure mobile access and show you how to use live viewing and playback."),
  ("How long does installation take?", "Most home and small-shop installations are completed in a day; larger systems take longer. The timeline is confirmed in your proposal.")]
 NEW_PAGES.append(area_page("cctv-camera-installation-in-gulberg", "Gulberg",
- "CCTV Camera Installation in Gulberg Lahore | SmartShield Security",
- "CCTV camera installation in Gulberg, Lahore: office, retail and home security systems by SmartShield Security.",
+ "CCTV Installation in Gulberg, Lahore | SmartShield",
+ "CCTV camera installation in Gulberg, Lahore: office, retail and home security systems by SmartShield Security — entrances, counters and parking areas.",
  "CCTV Camera Installation in Gulberg, Lahore",
  "Gulberg is one of Lahore's main commercial areas — offices, banks, restaurants, retail stores and clinics, alongside residential streets. SmartShield Security installs CCTV systems for Gulberg offices and shops that need reliable coverage of entrances, counters, cash areas and parking, as well as home systems for Gulberg houses.",
  ["Office CCTV — reception, entrances, corridors and server rooms", "Shop and retail CCTV — cash counters, entrances and stock areas", "Restaurant and clinic security systems", "Home CCTV for Gulberg houses and apartments", "IP cameras with remote viewing for business owners"], AREA_FAQS))
 NEW_PAGES.append(area_page("cctv-camera-installation-in-dha-lahore", "DHA Lahore",
- "CCTV Camera Installation in DHA Lahore | SmartShield Security",
- "CCTV camera installation in DHA Lahore: home, villa and commercial security systems by SmartShield Security.",
+ "CCTV Installation in DHA Lahore | SmartShield Security",
+ "CCTV camera installation in DHA Lahore: home, villa and commercial security systems by SmartShield Security — gates, driveways and boundaries.",
  "CCTV Camera Installation in DHA Lahore",
  "DHA Lahore's houses, villas and commercial areas need security systems that fit large properties — long boundaries, multiple entrances, driveways and gates. SmartShield Security installs home and commercial CCTV in DHA, with camera layouts planned around the size and shape of each property.",
  ["Home and villa CCTV — gates, driveways, boundaries and entrances", "Outdoor bullet cameras for long boundary walls", "Night vision for low-light areas", "Commercial CCTV for DHA shops and offices", "Mobile viewing for homeowners who travel"], AREA_FAQS))
 NEW_PAGES.append(area_page("cctv-camera-installation-in-johar-town", "Johar Town",
- "CCTV Camera Installation in Johar Town Lahore | SmartShield Security",
- "CCTV camera installation in Johar Town, Lahore: home and shop security systems by SmartShield Security.",
+ "CCTV Installation in Johar Town | SmartShield Security",
+ "CCTV camera installation in Johar Town, Lahore: home and shop security systems by SmartShield Security — gates, driveways and counters. Call or WhatsApp for a quote.",
  "CCTV Camera Installation in Johar Town, Lahore",
  "Johar Town is a large residential area of Lahore with houses, flats, shops, schools and small businesses. SmartShield Security installs home CCTV for Johar Town houses — covering gates, driveways and entrances — and security systems for local shops, schools and offices.",
  ["Home CCTV — gates, driveways and entrances", "Shop CCTV — counters, entrances and stock areas", "School and office security systems", "Wireless cameras where cabling is difficult", "DVR/NVR setup with mobile viewing"], AREA_FAQS))
 NEW_PAGES.append(area_page("cctv-camera-installation-in-allama-iqbal-town", "Allama Iqbal Town",
- "CCTV Camera Installation in Allama Iqbal Town Lahore | SmartShield Security",
- "CCTV camera installation in Allama Iqbal Town, Lahore: home and shop security systems by SmartShield Security.",
+ "CCTV Installation in Allama Iqbal Town | SmartShield",
+ "CCTV camera installation in Allama Iqbal Town, Lahore: home and shop security systems by SmartShield Security at a sensible cost. Book a visit by appointment.",
  "CCTV Camera Installation in Allama Iqbal Town, Lahore",
  "Allama Iqbal Town is a well-established residential area of Lahore, with houses, markets and small businesses. SmartShield Security installs CCTV for Allama Iqbal Town homes and shops — practical systems that cover the areas that matter, at a sensible cost.",
  ["Home CCTV — main gate, driveway and entrances", "Shop CCTV — counters and entrances", "Budget-friendly 2MP and 4MP systems", "Wireless cameras for homes where cabling is difficult", "Mobile viewing setup on your phone"], AREA_FAQS))
@@ -600,8 +610,8 @@ def _pkg_cards(pkgs, prefix):
     return "".join(pkg_card(n, r, pr, f, prefix=prefix, upgrades=u) for n, r, pr, f, u in pkgs)
 
 NEW_PAGES.append(("packages/index.html",
- "CCTV Camera Packages in Lahore | 2MP, 5MP, 4K, IP & Wireless | SmartShield Security",
- "CCTV camera packages in Lahore: 2MP, 5MP, 4K/8MP, IP and wireless packages with 2, 4, 6 or 8 cameras, recorder, storage and installation — prices as listed.",
+ "CCTV Camera Packages in Lahore | SmartShield Security",
+ "CCTV camera packages in Lahore: 2MP, 5MP, 4K/8MP, IP and wireless packages with 2, 4, 6 or 8 cameras, recorder, storage and installation. All prices as published.",
  "CCTV Camera Packages in Lahore", "../",
  f"""<p class="lead">Choose a package by resolution and camera count, then get an exact estimate for your property. Every package below includes cameras, a compatible recorder, storage, cabling, professional installation and mobile viewing setup.</p>
 PRICENOTE
@@ -639,8 +649,8 @@ def blog_post(slug, title, desc, h1, date, body_html):
 
 BLOG_POSTS = []
 BLOG_POSTS.append(blog_post("cost-of-cctv-camera-installation-in-lahore",
- "Cost of CCTV Camera Installation in Lahore (2026 Guide) | SmartShield Security",
- "How much does CCTV camera installation cost in Lahore? Typical prices, what affects the cost, and how to get an accurate quotation.",
+ "Cost of CCTV Installation in Lahore | SmartShield Security",
+ "How much does CCTV camera installation cost in Lahore? Typical 2026 prices, what affects the cost, and how to get an accurate quotation for your property.",
  "Cost of CCTV Camera Installation in Lahore",
  "11 November 2026",
  """<h2>What Does CCTV Installation Cost in Lahore?</h2>
@@ -654,9 +664,9 @@ BLOG_POSTS.append(blog_post("cost-of-cctv-camera-installation-in-lahore",
 <h2>How to Get an Accurate Price</h2>
 <p>Use our <a href="../../calculator/index.html">Smart Calculator</a> for a preliminary estimate based on your property and requirements. For a final quotation, we assess the site — camera positions, cable routes and storage needs — and confirm the price before work starts. No fixed per-package price is published, because the price genuinely depends on your property.</p>"""))
 BLOG_POSTS.append(blog_post("dvr-vs-nvr",
- "DVR vs NVR: Which Recorder Is Right for Your CCTV System? | SmartShield Security",
+ "DVR vs NVR: Which Recorder Is Right? | SmartShield",
  "DVR vs NVR explained simply: how each recorder works, which cameras they support, and how to choose the right one for your home or office in Lahore.",
- "DVR vs NVR: Which Recorder Is Right for You?",
+"DVR vs NVR: Which Recorder Is Right for You?",
  "11 November 2026",
  """<h2>What Is a DVR?</h2>
 <p>A DVR (Digital Video Recorder) works with analogue and HD cameras. The cameras send video to the DVR over coaxial cable, and the DVR records it to a hard disk. DVR systems are usually the lower-cost option and suit homes and small shops that do not need very high resolution.</p>
@@ -671,8 +681,8 @@ BLOG_POSTS.append(blog_post("dvr-vs-nvr",
 <h2>Can You Mix DVR and NVR?</h2>
 <p>Some recorders, often called hybrid or XVR models, accept both analogue and IP cameras. They are useful when you already have analogue cameras but want to add one or two IP cameras later. A hybrid recorder can be a sensible middle step, but it is still worth checking which resolutions and features it supports on each input before buying.</p>"""))
 BLOG_POSTS.append(blog_post("bullet-vs-dome-cctv-cameras",
- "Bullet vs Dome CCTV Cameras: Which One Do You Need? | SmartShield Security",
- "Bullet vs dome CCTV cameras compared: coverage, range, mounting, night vision and where each type works best in a Lahore home or shop.",
+ "Bullet vs Dome CCTV Cameras | SmartShield Security",
+ "Bullet vs dome CCTV cameras compared: coverage, range, mounting, night vision and where each type works best in a Lahore home, office or shop.",
  "Bullet vs Dome CCTV Cameras: Which One Do You Need?",
  "11 November 2026",
  """<h2>What Is a Bullet Camera?</h2>
@@ -688,8 +698,8 @@ BLOG_POSTS.append(blog_post("bullet-vs-dome-cctv-cameras",
 <h2>What About PTZ Cameras?</h2>
 <p>For very large areas — a warehouse yard, a big parking area or a large boundary — a PTZ camera that can pan, tilt and zoom covers more ground than a fixed bullet or dome. PTZ cameras cost more and suit active monitoring rather than set-and-forget recording, so they are usually added alongside fixed cameras rather than replacing them. For most homes and shops, a mix of bullet and dome cameras is enough.</p>"""))
 BLOG_POSTS.append(blog_post("hikvision-vs-dahua-cctv-cameras",
- "Hikvision vs Dahua CCTV Cameras: An Honest Comparison | SmartShield Security",
- "Hikvision vs Dahua compared honestly: image quality, app, AI features, price and reliability — and how to choose between them in Pakistan.",
+ "Hikvision vs Dahua CCTV Cameras: Which Is Best? (2026)",
+ "Hikvision vs Dahua CCTV cameras compared honestly: image quality, app, AI features, price and reliability — how to choose in Pakistan. Read the honest comparison.",
  "Hikvision vs Dahua CCTV Cameras: An Honest Comparison",
  "11 November 2026",
  """<h2>Two Brands, One Market</h2>
@@ -707,8 +717,8 @@ BLOG_POSTS.append(blog_post("hikvision-vs-dahua-cctv-cameras",
 <h2>What About Warranty and Support?</h2>
 <p>Both brands are sold through distributors in Pakistan, and warranty terms depend on the seller and the specific product. When comparing quotations, check that the warranty is stated in writing and that the supplier is an authorised channel — a camera bought without proper warranty support can be difficult to replace if it fails within the first year.</p>"""))
 BLOG_POSTS.append(blog_post("wireless-cctv-camera-price-guide",
- "Wireless CCTV Camera Price Guide for Lahore (2026) | SmartShield Security",
- "Wireless CCTV camera prices in Lahore: what wireless cameras cost, what affects the price, and when wireless is the right choice for your home.",
+ "Wireless CCTV Camera Price in Lahore (2026) | Guide",
+ "Wireless CCTV camera prices in Lahore: what wireless cameras cost, what affects the price, and when wireless is the right choice for your home or shop.",
  "Wireless CCTV Camera Price Guide for Lahore",
  "11 November 2026",
  """<h2>What Is a Wireless CCTV Camera?</h2>
@@ -725,8 +735,8 @@ BLOG_POSTS.append(blog_post("wireless-cctv-camera-price-guide",
 <p>Battery-powered wireless cameras are the easiest to place — no socket needed — but the battery must be recharged every few weeks or months depending on use, and cold weather shortens battery life. Mains-powered cameras never need charging, but they need a socket nearby. For a camera that must record all the time, mains power is usually the better choice; battery models suit places where a socket is impossible.</p>"""))
 
 BLOG_POSTS.append(blog_post("ip-camera-prices-guide",
- "IP Camera Prices Guide for Lahore (2026) | SmartShield Security",
- "IP camera prices in Lahore: what IP cameras cost, what affects the price, PoE and NVR requirements, and when IP is worth it.",
+ "IP Camera Prices in Lahore: 2026 Guide | SmartShield",
+ "IP camera prices in Lahore: what IP cameras cost, what affects the price, PoE and NVR requirements, and when IP is worth it for your property.",
  "IP Camera Prices Guide for Lahore",
  "11 November 2026",
  """<h2>What Is an IP Camera?</h2>
@@ -742,8 +752,8 @@ BLOG_POSTS.append(blog_post("ip-camera-prices-guide",
 <h2>IP Cameras and Your Internet Connection</h2>
 <p>Recording happens on your local network, so a slow internet connection does not affect recording quality. Internet speed only matters when you watch cameras remotely — and even then, the app usually streams a lower-resolution preview to save data. What matters more is the quality of your home or office network: a good router and proper cabling keep the system stable.</p>"""))
 BLOG_POSTS.append(blog_post("home-security-camera-installation",
- "Home Security Camera Installation in Lahore: A Practical Guide | SmartShield Security",
- "Home security camera installation in Lahore: where to place cameras, which type to choose, costs, and how installation works.",
+ "Home CCTV Camera Installation Lahore | SmartShield",
+ "Home security camera installation in Lahore: where to place cameras, which type to choose, costs, mobile viewing and how installation works.",
  "Home Security Camera Installation in Lahore",
  "11 November 2026",
  """<h2>Where Should Home Cameras Go?</h2>
@@ -759,8 +769,8 @@ BLOG_POSTS.append(blog_post("home-security-camera-installation",
 <h2>Keeping Your Home System Working</h2>
 <p>A home system needs very little care, but a little care goes a long way: wipe camera lenses every month or two, check that the recorder is still recording every week, and keep the recorder somewhere safe and ventilated. If a camera goes offline or the app stops connecting, check the power supply and the Wi-Fi first — those two causes cover most home faults.</p>"""))
 BLOG_POSTS.append(blog_post("office-cctv-installation",
- "Office CCTV Installation in Lahore: Planning, Costs & Setup | SmartShield Security",
- "Office CCTV installation in Lahore: what to cover, privacy rules, recorder and access control, costs and how installation works.",
+ "Office CCTV Installation Lahore: Costs & Setup Guide",
+ "Office CCTV installation in Lahore: what to cover, privacy rules, recorder and access control, costs and how installation works for your office.",
  "Office CCTV Installation in Lahore",
  "11 November 2026",
  """<h2>What Should Office Cameras Cover?</h2>
@@ -778,8 +788,8 @@ BLOG_POSTS.append(blog_post("office-cctv-installation",
 <h2>Privacy Rules Worth Knowing</h2>
 <p>Staff should know where cameras are and why they are there. Cameras belong in entrances, corridors and common areas — not in washrooms, prayer rooms or private offices. A short written note telling staff what is recorded and who can view it prevents most misunderstandings, and it is good practice for any business.</p>"""))
 BLOG_POSTS.append(blog_post("cctv-installation-for-shops",
- "CCTV Installation for Shops in Lahore: A Shopkeeper's Guide | SmartShield Security",
- "CCTV installation for shops in Lahore: cash counter, entrance and stock room coverage, costs, and what to check before buying.",
+ "CCTV Installation for Shops in Lahore: Shopkeeper's Guide",
+ "CCTV installation for shops in Lahore: cash counter, entrance and stock room coverage, costs, and what to check before buying a system. Read the full guide first.",
  "CCTV Installation for Shops in Lahore",
  "11 November 2026",
  """<h2>What a Shop Needs Covered</h2>
@@ -795,7 +805,7 @@ BLOG_POSTS.append(blog_post("cctv-installation-for-shops",
 <h2>Common Shop Mistakes to Avoid</h2>
 <p>The most common mistake is pointing the counter camera at the customer's back instead of the till — the footage then shows nothing useful when a dispute arises. Another is buying the cheapest hard disk and discovering a week later that it only keeps two days of recordings. And a third is never testing playback: a system can look fine on the live screen while recording nothing at all. Test playback on installation day, and check it again after the first week.</p>"""))
 BLOG_POSTS.append(blog_post("night-vision-cctv-camera-price-in-pakistan",
- "Night Vision CCTV Camera Price in Pakistan (2026 Guide) | SmartShield Security",
+ "Night Vision CCTV Camera Price Pakistan | SmartShield",
  "Night vision CCTV camera prices in Pakistan: infrared vs colour night vision, what affects the price, and how to choose for your home or shop.",
  "Night Vision CCTV Camera Price in Pakistan",
  "11 November 2026",
@@ -822,8 +832,8 @@ def blog_index():
     inner = f"""<p class="lead">Practical CCTV and security guides from SmartShield Security — written in plain language, based on the questions Lahore homeowners, shopkeepers and offices actually ask.</p>
 <div class="grid grid-3" style="margin-top:28px">{cards}</div>"""
     return ("blog/index.html",
-     "CCTV & Security Blog | Guides for Lahore Homes, Offices & Shops | SmartShield Security",
-     "SmartShield Security blog: practical CCTV guides for Lahore — costs, DVR vs NVR, bullet vs dome, Hikvision vs Dahua, wireless and IP camera prices, night vision and more.",
+     "CCTV & Security Blog | SmartShield Security Lahore",
+     "SmartShield Security blog: practical CCTV guides for Lahore — costs, DVR vs NVR, bullet vs dome, Hikvision vs Dahua, wireless and IP prices.",
      "CCTV & Security Blog", "../", inner, None,
      [("Home", "../index.html"), ("Blog", "../blog/index.html")], None, "")
 
@@ -844,7 +854,7 @@ def build():
     # also patch services hub links (CALCPREFIX inside NEW_PAGES already handled above)
     # sitemap: existing + new
     urls = ["", "about/", "calculator/", "projects/", "social-media/", "contact/", "privacy-policy/", "terms/"] + [f"services/{s}/" for s, *_ in B.SERVICES] + all_urls
-    sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>{BASE}/{u}</loc></url>\n' for u in urls) + "</urlset>\n"
+    sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f'  <url><loc>{BASE}/{u}</loc><lastmod>2026-11-11</lastmod></url>\n' for u in urls) + "</urlset>\n"
     write("sitemap.xml", sm)
     print("TOTAL URLS IN SITEMAP:", len(urls))
 
